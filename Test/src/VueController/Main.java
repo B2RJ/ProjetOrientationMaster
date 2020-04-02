@@ -126,6 +126,12 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+        if (args[0].equals("test")) {
+            System.out.println("Mode test activé");
+        }
+        if (args[0].equals("demo")) {
+            System.out.println("Mode démo activé");
+        }
         launch(args);
     }
 }
