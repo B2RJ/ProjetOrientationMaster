@@ -7,7 +7,9 @@ public class Route {
     public Case[][] tabCase;
 
     // R = Rien, D = Décision, G = goudron, A = attente, C = Conflit
-    private String intersection = "RRRGGRRR" +
+    private String intersection =
+
+            "RRRGGRRR" +
             "RRRDGRRR" +
             "RRRAGRRR" +
             "GGGCCADG" +
