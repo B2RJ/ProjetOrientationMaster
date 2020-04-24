@@ -1,20 +1,16 @@
 package Model;
 
-
-import javafx.scene.shape.Circle;
-
 import java.util.Observable;
 
 public abstract class Vehicule extends Observable implements Runnable {
     private int coordonneX;
     private int coordonneY;
 
+    private int SIZE_X;
+    private int SIZE_Y;
+
     private Orientation orientation;
     private Direction direction;
-
-    private Couleur couleur;
-
-    private Circle  maForme = new Circle();
 
     public void setCoordonneX(int coordonneX) {
         this.coordonneX = coordonneX;
@@ -44,25 +40,24 @@ public abstract class Vehicule extends Observable implements Runnable {
         return direction;
     }
 
-    public void setCouleur(Couleur couleur) {
-        this.couleur = couleur;
-    }
-    public Couleur getCouleur() {
-        return couleur;
+    public Vehicule(int sizeX, int sizeY) {
+        this.SIZE_X = sizeX;
+        this.SIZE_Y = sizeY;
     }
 
-    public void setMaForme(Circle maForme) {
-        this.maForme = maForme;
-    }
-    public Circle getMaForme() {
-        return maForme;
-    }
-
-    public Vehicule() {
+    public Vehicule(int sizeX, int sizeY, int coordonneX, int coordonneY, Orientation orientation, Direction direction) {
+        this.SIZE_X = sizeX;
+        this.SIZE_Y = sizeY;
+        this.coordonneX = coordonneX;
+        this.coordonneY = coordonneY;
+        this.orientation = orientation;
+        this.direction = direction;
     }
 
     abstract public void run();
 
-
+    public boolean estEnVie() {
+        return (coordonneX <= SIZE_X && coordonneY <= SIZE_Y && coordonneX >= -1 && coordonneY >= -1);
+    }
 
 }

@@ -1,6 +1,7 @@
 package VueController;
 
 import Model.*;
+import Tests.mainTest;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -11,6 +12,8 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.util.Observer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class Main extends Application {
@@ -46,13 +49,17 @@ public class Main extends Application {
 
         //Déclaration des voiture
         voitures = new Voiture[] {
-                new Voiture()
+                new Voiture(SIZE_X, SIZE_Y, 3, -1, Orientation.Sud, Direction.NS),
+                //new Voiture(SIZE_X, SIZE_Y, 4, 8, Orientation.Nord, Direction.SN),
+                //new Voiture(SIZE_X, SIZE_Y, -1, 4, Orientation.Est, Direction.OE),
+                //new Voiture(SIZE_X, SIZE_Y, 8, 3, Orientation.Ouest, Direction.EO)
         };
+
 
         //Déclaration de la scène + titre
         StackPane root = new StackPane();
         root.getChildren().add(grid);
-        Scene scene = new Scene(root, 800, 600);
+        Scene scene = new Scene(root, 800, 800);
         stage.setTitle("POPOPO POM");
         stage.setScene(scene);
         stage.show();
@@ -89,18 +96,26 @@ public class Main extends Application {
             voiture.addObserver(o);
             voiture.start();
         }
-
         grid.requestFocus();
     }
 
 
     public static void main(String[] args) {
+        if (args[0].equals("dev")) {
+            System.out.println("Mode dev activé");
+            mainTest lesTests = new mainTest();
+            lesTests.runTest();
+            launch(args);
+        }
         if (args[0].equals("test")) {
             System.out.println("Mode test activé");
+            mainTest lesTests = new mainTest();
+            lesTests.runTest();
+            System.exit(1);
         }
         if (args[0].equals("demo")) {
             System.out.println("Mode démo activé");
+            launch(args);
         }
-        launch(args);
     }
 }
