@@ -11,19 +11,50 @@ public class Voiture extends Vehicule {
     private Orientation orientation;
     private Direction direction;
 
-    public Voiture() {
+    public Voiture(int sizeX, int sizeY) {
+        super(sizeX, sizeY);
         setCoordonneX(2);
         setCoordonneY(2);
         setOrientation(Orientation.Nord);
         setDirection(Direction.NS);
     }
 
+    public Voiture(int sizeX, int sizeY, int coordonneX, int coordonneY, Orientation orientation, Direction direction) {
+        super( sizeX,  sizeY,  coordonneX,  coordonneY,  orientation,  direction);
+    }
+
     public void realiserAction() {
-        setCoordonneY(getCoordonneY() + 1);
+        if(voieEstLibre()) {
+            switch (getDirection())
+            {
+                case NS:
+                    setCoordonneY(getCoordonneY()+1);
+                    break;
+
+                case SN:
+                    setCoordonneY(getCoordonneY()-1);
+                    break;
+
+                case EO:
+                    setCoordonneX(getCoordonneX()-1);
+                    break;
+
+                case OE:
+                    setCoordonneX(getCoordonneX()+1);
+                    break;
+
+                default:
+                    System.out.println("Ce trajet n'est pas encore implémenté");
+            }
+        }
+    }
+
+    public boolean voieEstLibre() {
+        return true;
     }
 
     public void run() {
-        while(true) {
+        while(estEnVie()) {
             this.realiserAction();
             setChanged();
             notifyObservers();
