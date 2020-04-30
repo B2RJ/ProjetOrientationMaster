@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Ajout des tests ainsi que d'un mode &quot;dev&quot; qui execute les tests + la démo">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test/Tests/mainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test/Tests/mainTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/mainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/mainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VueController/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VueController/Main.java" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Avance MR">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
-=======
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="ça marche, ça fonctionne, c'est trop bien">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test/Model/Voiture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test/Model/Voiture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test/VueController/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test/VueController/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Vehicule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Vehicule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Voiture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Voiture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VueController/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VueController/Main.java" afterDir="false" />
-    </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
->>>>>>> 79ddada1b26ddd6cab9b35e0834a7c3734f142a7
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,105 +71,6 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-<<<<<<< HEAD
-=======
-  <component name="FavoritesManager">
-    <favorites_list name="JavaFxApplication" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/VueController/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="85" column="10" lean-forward="true" selection-start-line="85" selection-start-column="10" selection-end-line="85" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Voiture.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#444#445#0" expanded="true" />
-                <element signature="e#494#495#0" expanded="true" />
-                <element signature="e#1397#1398#0" expanded="true" />
-                <element signature="e#1437#1438#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Vehicule.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#Vehicule#0;class#Vehicule#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Attente.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/VueController/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Route.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-              <folding>
-                <element signature="method#Route#0;class#Route#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Orientation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Direction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
->>>>>>> 79ddada1b26ddd6cab9b35e0834a7c3734f142a7
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -176,21 +79,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>D</find>
-      <find>stage</find>
-      <find>Voiture</find>
-      <find>sys</find>
-      <find>Focus</find>
-      <find>grid</find>
-      <find>gridPan</find>
-<<<<<<< HEAD
-      <find>voitures</find>
-=======
->>>>>>> 79ddada1b26ddd6cab9b35e0834a7c3734f142a7
-    </findStrings>
-  </component>
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
@@ -198,51 +86,19 @@
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
-<<<<<<< HEAD
-      <list>
-        <option value="BRUNEAU RICHARD p1402059 &lt;richard.bruneau@etu.univ-lyon1.fr&gt;" />
-=======
       <list>
         <option value="BRUNEAU RICHARD p1402059 &lt;richard.bruneau@etu.univ-lyon1.fr&gt;" />
       </list>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$/.." value="master" />
+        <entry key="$PROJECT_DIR$/.." value="5-faire-avancer-la-voiture-avec-changement-de-direction" />
       </map>
-    </option>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/Model/Orientation.java" />
-        <option value="$PROJECT_DIR$/src/Model/Direction.java" />
-        <option value="$PROJECT_DIR$/src/Model/Couleur.java" />
-        <option value="$PROJECT_DIR$/src/Model/Route.java" />
-        <option value="$PROJECT_DIR$/src/Model/Vehicule.java" />
-        <option value="$PROJECT_DIR$/src/Model/Voiture.java" />
-        <option value="$PROJECT_DIR$/src/VueController/Main.java" />
->>>>>>> 79ddada1b26ddd6cab9b35e0834a7c3734f142a7
-      </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$/.." value="master" />
-      </map>
-    </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-<<<<<<< HEAD
-=======
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="830" />
-  </component>
->>>>>>> 79ddada1b26ddd6cab9b35e0834a7c3734f142a7
   <component name="ProjectId" id="1YcGNKMG3E1ed3PgyJ9v0uSAj2f" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -250,52 +106,6 @@
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
-<<<<<<< HEAD
-=======
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="VueController" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
->>>>>>> 79ddada1b26ddd6cab9b35e0834a7c3734f142a7
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -312,13 +122,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-<<<<<<< HEAD
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
-=======
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../pom" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="SDKs" />
->>>>>>> 79ddada1b26ddd6cab9b35e0834a7c3734f142a7
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -330,29 +141,13 @@
       <recent name="$PROJECT_DIR$/src/img" />
     </key>
   </component>
-<<<<<<< HEAD
-  <component name="RunManager" selected="Application.Dev">
+  <component name="RunManager">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-=======
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.Main">
->>>>>>> 79ddada1b26ddd6cab9b35e0834a7c3734f142a7
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -365,16 +160,7 @@
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
-    <configuration name="Dev" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="VueController.Main" />
-      <module name="Test" />
-      <option name="PROGRAM_PARAMETERS" value="dev" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application">
+    <configuration name="Demo" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="VueController.Main" />
       <module name="Test" />
       <option name="PROGRAM_PARAMETERS" value="demo" />
@@ -390,10 +176,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Dev" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="VueController.Main" />
+      <module name="Test" />
+      <option name="PROGRAM_PARAMETERS" value="dev" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tests" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="VueController.Main" />
       <module name="Test" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;test&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="test" />
       <option name="VM_PARAMETERS" value="-ea" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -437,9 +232,9 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Tests" />
       <item itemvalue="Application.Dev" />
+      <item itemvalue="Application.Demo" />
+      <item itemvalue="Application.Tests" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -453,7 +248,10 @@
       <option name="presentableId" value="Default" />
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
-      <workItem from="1587735586106" duration="70000" />
+      <workItem from="1587998861009" duration="1519000" />
+      <workItem from="1588064537052" duration="2102000" />
+      <workItem from="1588233931142" duration="742000" />
+      <workItem from="1588246887944" duration="12753000" />
     </task>
     <task id="LOCAL-00001" summary="WIP: Création de la classe voiture">
       <created>1586506340528</created>
@@ -497,88 +295,35 @@
       <option name="project" value="LOCAL" />
       <updated>1586937801012</updated>
     </task>
-    <task id="LOCAL-00007" summary="Tout est propre">
-      <created>1586942670683</created>
+    <task id="LOCAL-00007" summary="La voiture tourne toujours au deuxième C, c'est normal, je me suis trompé.">
+      <created>1588002073615</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1586942670683</updated>
+      <updated>1588002073615</updated>
     </task>
-    <task id="LOCAL-00008" summary="La voiture est tué après la sortie de la map #7">
-      <created>1586943397925</created>
+    <task id="LOCAL-00008" summary="La voiture tourne correctement !">
+      <created>1588066956267</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1586943397925</updated>
+      <updated>1588066956267</updated>
     </task>
-    <task id="LOCAL-00009" summary="La voiture est tué après la sortie de la map #7">
-      <created>1586943439878</created>
+    <task id="LOCAL-00009" summary="La voiture tourne correctement, c'est trop bien">
+      <created>1588260829036</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1586943439878</updated>
+      <updated>1588260829037</updated>
     </task>
-    <task id="LOCAL-00010" summary="Les voitures se déplacent dans les 4 directions en lignes droites ( #4 et #3 )">
-      <created>1586954913080</created>
+    <task id="LOCAL-00010" summary="Avance MR">
+      <created>1588261363998</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1586954913081</updated>
+      <updated>1588261363999</updated>
     </task>
-    <task id="LOCAL-00011" summary="Ajout des tests ainsi que d'un mode &quot;dev&quot; qui execute les tests + la démo">
-      <created>1586960754532</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1586960754533</updated>
-    </task>
-<<<<<<< HEAD
-    <option name="localTasksCounter" value="12" />
-=======
-    <task id="LOCAL-00001" summary="WIP: Création de la classe voiture">
-      <created>1586506340528</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1586506340528</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Agrandissement de la fenêtre">
-      <created>1586506377173</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1586506377173</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Autres">
-      <created>1586506397336</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1586506397336</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Fonctionne sans erreurs. La voiture ne s'affiche pas">
-      <created>1586933496880</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1586933496880</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Fonctionne sans erreurs. La voiture ne s'affiche pas">
-      <created>1586933531347</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1586933531347</updated>
-    </task>
-    <task id="LOCAL-00006" summary="ça marche, ça fonctionne, c'est trop bien">
-      <created>1586937801012</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1586937801012</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
->>>>>>> 79ddada1b26ddd6cab9b35e0834a7c3734f142a7
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -590,7 +335,9 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-<<<<<<< HEAD
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -616,82 +363,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-=======
-  <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="830" extended-state="6" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49863762" visible="true" weight="0.2639485" />
-      <window_info id="Structure" order="1" sideWeight="0.5013624" side_tool="true" weight="0.24964234" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Learn" order="6" />
-      <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.30081302" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39918256" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32970026" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.2588076" />
-      <window_info anchor="bottom" id="Log Analyzer" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32596686" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.32777777" />
-      <window_info anchor="bottom" id="SOQL Query" order="11" />
-      <window_info anchor="bottom" id="Anonymous Apex" order="12" weight="0.32921812" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32384825" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout>
->>>>>>> 79ddada1b26ddd6cab9b35e0834a7c3734f142a7
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
@@ -701,150 +372,78 @@
     <MESSAGE value="Autres" />
     <MESSAGE value="Fonctionne sans erreurs. La voiture ne s'affiche pas" />
     <MESSAGE value="ça marche, ça fonctionne, c'est trop bien" />
-<<<<<<< HEAD
-    <MESSAGE value="Tout est propre" />
-    <MESSAGE value="La voiture est tué après la sortie de la map #7" />
-    <MESSAGE value="Les voitures se déplacent dans les 4 directions en lignes droites ( #4 et #3 )" />
-    <MESSAGE value="Ajout des tests ainsi que d'un mode &quot;dev&quot; qui execute les tests + la démo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout des tests ainsi que d'un mode &quot;dev&quot; qui execute les tests + la démo" />
+    <MESSAGE value="La voiture tourne toujours au deuxième C, c'est normal, je me suis trompé." />
+    <MESSAGE value="La voiture tourne correctement !" />
+    <MESSAGE value="La voiture tourne correctement, c'est trop bien" />
+    <MESSAGE value="Avance MR" />
+    <option name="LAST_COMMIT_MESSAGE" value="Avance MR" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="208" y="23" width="1024" height="821" key="#Project_Structure" timestamp="1587735657862">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state x="369" y="89" width="854" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588248461176">
+      <screen x="0" y="23" width="1440" height="814" />
     </state>
-    <state x="208" y="23" width="1024" height="821" key="#Project_Structure/0.23.1440.821@0.23.1440.821" timestamp="1587735657862" />
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587735648881" />
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1587735648890" />
-    <state width="903" height="277" key="GridCell.Tab.0.bottom" timestamp="1587735648890" />
-    <state width="903" height="277" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587735648890" />
-    <state width="903" height="277" key="GridCell.Tab.0.center" timestamp="1587735648890" />
-    <state width="903" height="277" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587735648890" />
-    <state width="903" height="277" key="GridCell.Tab.0.left" timestamp="1587735648890" />
-    <state width="903" height="277" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587735648890" />
-    <state width="903" height="277" key="GridCell.Tab.0.right" timestamp="1587735648890" />
-    <state width="903" height="277" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587735648890" />
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1587735648890" />
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1587735648890" />
-=======
-    <option name="LAST_COMMIT_MESSAGE" value="ça marche, ça fonctionne, c'est trop bien" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" />
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" />
-    <state width="903" height="277" key="GridCell.Tab.0.bottom" />
-    <state width="903" height="277" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" />
-    <state width="903" height="277" key="GridCell.Tab.0.center" />
-    <state width="903" height="277" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" />
-    <state width="903" height="277" key="GridCell.Tab.0.left" />
-    <state width="903" height="277" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" />
-    <state width="903" height="277" key="GridCell.Tab.0.right" />
-    <state width="903" height="277" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" />
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" />
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Test.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6514" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../../Librairies/javafx-sdk-11.0.2/lib/javafx.graphics.jar!/javafx/application/Application.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Couleur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Attente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/VueController/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Route.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding>
-            <element signature="method#Route#0;class#Route#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Orientation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Direction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Vehicule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Vehicule#0;class#Vehicule#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Voiture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#494#495#0" expanded="true" />
-            <element signature="e#1397#1398#0" expanded="true" />
-            <element signature="e#1437#1438#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/VueController/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="85" column="10" lean-forward="true" selection-start-line="85" selection-start-column="10" selection-end-line="85" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <state x="369" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.814/-212.-1057.1920.1057@0.23.1440.814" timestamp="1588248461176" />
+    <state x="401" y="89" width="854" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.816@0.23.1440.816" timestamp="1588234114081" />
+    <state x="565" y="224" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588234106210">
+      <screen x="0" y="23" width="1440" height="816" />
+    </state>
+    <state x="565" y="224" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.1440.816@0.23.1440.816" timestamp="1588234106210" />
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587999381004" />
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1587999381004" />
+    <state width="1398" height="183" key="GridCell.Tab.0.bottom" timestamp="1588261294905">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1398" height="183" key="GridCell.Tab.0.bottom/0.23.1440.811/-212.-1057.1920.1057@0.23.1440.811" timestamp="1588261294905" />
+    <state width="1398" height="184" key="GridCell.Tab.0.bottom/0.23.1440.812/-212.-1057.1920.1057@0.23.1440.812" timestamp="1588254915722" />
+    <state width="1398" height="184" key="GridCell.Tab.0.bottom/0.23.1440.814/-212.-1057.1920.1057@0.23.1440.814" timestamp="1588249487017" />
+    <state width="1398" height="187" key="GridCell.Tab.0.bottom/0.23.1440.816@0.23.1440.816" timestamp="1588236709323" />
+    <state width="1398" height="194" key="GridCell.Tab.0.bottom/0.23.1440.877/-212.-1057.1920.967@0.23.1440.877" timestamp="1588002091813" />
+    <state width="1398" height="206" key="GridCell.Tab.0.bottom/0.23.1440.877/-212.-1057.1920.970@0.23.1440.877" timestamp="1588067606256" />
+    <state width="1398" height="206" key="GridCell.Tab.0.bottom/0.23.1440.877/-212.-1057.1920.973@0.23.1440.877" timestamp="1588066564730" />
+    <state width="903" height="277" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587999381004" />
+    <state width="1398" height="183" key="GridCell.Tab.0.center" timestamp="1588261294903">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1398" height="183" key="GridCell.Tab.0.center/0.23.1440.811/-212.-1057.1920.1057@0.23.1440.811" timestamp="1588261294903" />
+    <state width="1398" height="184" key="GridCell.Tab.0.center/0.23.1440.812/-212.-1057.1920.1057@0.23.1440.812" timestamp="1588254915721" />
+    <state width="1398" height="184" key="GridCell.Tab.0.center/0.23.1440.814/-212.-1057.1920.1057@0.23.1440.814" timestamp="1588249487015" />
+    <state width="1398" height="187" key="GridCell.Tab.0.center/0.23.1440.816@0.23.1440.816" timestamp="1588236709321" />
+    <state width="1398" height="194" key="GridCell.Tab.0.center/0.23.1440.877/-212.-1057.1920.967@0.23.1440.877" timestamp="1588002091811" />
+    <state width="1398" height="206" key="GridCell.Tab.0.center/0.23.1440.877/-212.-1057.1920.970@0.23.1440.877" timestamp="1588067606254" />
+    <state width="1398" height="206" key="GridCell.Tab.0.center/0.23.1440.877/-212.-1057.1920.973@0.23.1440.877" timestamp="1588066564728" />
+    <state width="903" height="277" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587999381004" />
+    <state width="1398" height="183" key="GridCell.Tab.0.left" timestamp="1588261294902">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1398" height="183" key="GridCell.Tab.0.left/0.23.1440.811/-212.-1057.1920.1057@0.23.1440.811" timestamp="1588261294902" />
+    <state width="1398" height="184" key="GridCell.Tab.0.left/0.23.1440.812/-212.-1057.1920.1057@0.23.1440.812" timestamp="1588254915720" />
+    <state width="1398" height="184" key="GridCell.Tab.0.left/0.23.1440.814/-212.-1057.1920.1057@0.23.1440.814" timestamp="1588249487014" />
+    <state width="1398" height="187" key="GridCell.Tab.0.left/0.23.1440.816@0.23.1440.816" timestamp="1588236709320" />
+    <state width="1398" height="194" key="GridCell.Tab.0.left/0.23.1440.877/-212.-1057.1920.967@0.23.1440.877" timestamp="1588002091811" />
+    <state width="1398" height="206" key="GridCell.Tab.0.left/0.23.1440.877/-212.-1057.1920.970@0.23.1440.877" timestamp="1588067606254" />
+    <state width="1398" height="206" key="GridCell.Tab.0.left/0.23.1440.877/-212.-1057.1920.973@0.23.1440.877" timestamp="1588066564727" />
+    <state width="903" height="277" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587999381004" />
+    <state width="1398" height="183" key="GridCell.Tab.0.right" timestamp="1588261294904">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1398" height="183" key="GridCell.Tab.0.right/0.23.1440.811/-212.-1057.1920.1057@0.23.1440.811" timestamp="1588261294904" />
+    <state width="1398" height="184" key="GridCell.Tab.0.right/0.23.1440.812/-212.-1057.1920.1057@0.23.1440.812" timestamp="1588254915721" />
+    <state width="1398" height="184" key="GridCell.Tab.0.right/0.23.1440.814/-212.-1057.1920.1057@0.23.1440.814" timestamp="1588249487016" />
+    <state width="1398" height="187" key="GridCell.Tab.0.right/0.23.1440.816@0.23.1440.816" timestamp="1588236709322" />
+    <state width="1398" height="194" key="GridCell.Tab.0.right/0.23.1440.877/-212.-1057.1920.967@0.23.1440.877" timestamp="1588002091812" />
+    <state width="1398" height="206" key="GridCell.Tab.0.right/0.23.1440.877/-212.-1057.1920.970@0.23.1440.877" timestamp="1588067606255" />
+    <state width="1398" height="206" key="GridCell.Tab.0.right/0.23.1440.877/-212.-1057.1920.973@0.23.1440.877" timestamp="1588066564729" />
+    <state width="903" height="277" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587999381004" />
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1587999381004" />
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1587999381004" />
+    <state x="508" y="349" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588261422792">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state x="508" y="349" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.811/-212.-1057.1920.1057@0.23.1440.811" timestamp="1588261422792" />
+    <state x="385" y="161" width="670" height="676" key="search.everywhere.popup" timestamp="1588247808244">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state x="385" y="161" width="670" height="676" key="search.everywhere.popup/0.23.1440.814/-212.-1057.1920.1057@0.23.1440.814" timestamp="1588247808244" />
   </component>
   <component name="masterDetails">
     <states>
@@ -920,6 +519,5 @@
         </settings>
       </state>
     </states>
->>>>>>> 79ddada1b26ddd6cab9b35e0834a7c3734f142a7
   </component>
 </project>
