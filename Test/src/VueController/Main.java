@@ -54,9 +54,9 @@ public class Main extends Application {
 
         //Déclaration des voiture
         voitures = new Voiture[] {
-                //new Voiture(SIZE_X, SIZE_Y, 3, -1, Orientation.Sud, Direction.NS, voitures, fileAttente, route),
-                //new Voiture(SIZE_X, SIZE_Y, 3, -1, Orientation.Sud, Direction.NO, voitures, fileAttente, route),
-                //new Voiture(SIZE_X, SIZE_Y, 3, -1, Orientation.Sud, Direction.NE, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 3, -1, Orientation.Sud, Direction.NS, voitures, fileAttente, route),
+                //new Voiture(SIZE_X, SIZE_Y, 3, -4, Orientation.Sud, Direction.NO, voitures, fileAttente, route),
+                //new Voiture(SIZE_X, SIZE_Y, 3, -10, Orientation.Sud, Direction.NE, voitures, fileAttente, route),
                 //new Voiture(SIZE_X, SIZE_Y, 4, 8, Orientation.Nord, Direction.SN, voitures, fileAttente, route),
                 //new Voiture(SIZE_X, SIZE_Y, 4, 8, Orientation.Nord, Direction.SE, voitures, fileAttente, route),
                 //new Voiture(SIZE_X, SIZE_Y, 4, 8, Orientation.Nord, Direction.SO, voitures, fileAttente, route),
@@ -65,7 +65,7 @@ public class Main extends Application {
                 //new Voiture(SIZE_X, SIZE_Y, -1, 4, Orientation.Est, Direction.OS, voitures, fileAttente, route),
                 //new Voiture(SIZE_X, SIZE_Y, 8, 3, Orientation.Ouest, Direction.EO, voitures, fileAttente, route),
                 //new Voiture(SIZE_X, SIZE_Y, 8, 3, Orientation.Ouest, Direction.EN, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, 8, 3, Orientation.Ouest, Direction.ES, voitures, fileAttente, route),
+                //new Voiture(SIZE_X, SIZE_Y, 8, 3, Orientation.Ouest, Direction.ES, voitures, fileAttente, route),
 
         };
 

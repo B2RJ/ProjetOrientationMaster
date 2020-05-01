@@ -16,6 +16,9 @@ public abstract class Vehicule extends Observable implements Runnable {
     private Direction direction;
 
     private boolean dejaTourne;
+    //Le but de ce booleen est de faire partir les voitures depuis l'extérieur de la carte.
+    // Ainsi, il y aura plus de réalité au cours de la simulation
+    private boolean tuable;
 
     private Voiture[] voitures;
     private ArrayList fileAttente;
@@ -56,6 +59,9 @@ public abstract class Vehicule extends Observable implements Runnable {
     public Voiture[] getVoitures() { return voitures;}
     public void setVoiture(Voiture[] newVoiture) { this.voitures = newVoiture; }
 
+    public boolean getTuable() { return tuable;}
+    public void setTuable(boolean b) { this.tuable = b;}
+
     public ArrayList getFileAttente() {return fileAttente;}
     public void addFileAttente(Vehicule v) { fileAttente.add(v);}
     public void deleteFileAttente(Vehicule v) { fileAttente.remove(v);}
@@ -68,6 +74,7 @@ public abstract class Vehicule extends Observable implements Runnable {
                     Voiture[] voitures, ArrayList fileAttente,
                     Route route) {
         this.dejaTourne = false;
+        this.tuable = false;
         this.SIZE_X = sizeX;
         this.SIZE_Y = sizeY;
         this.coordonneX = coordonneX;
@@ -82,7 +89,10 @@ public abstract class Vehicule extends Observable implements Runnable {
     abstract public void run();
 
     public boolean estEnVie() {
-        return (coordonneX <= SIZE_X && coordonneY <= SIZE_Y && coordonneX >= -1 && coordonneY >= -1);
+        if(getTuable()) {
+            return (coordonneX <= SIZE_X && coordonneY <= SIZE_Y && coordonneX >= -1 && coordonneY >= -1);
+        }
+        return (true);
     }
 
 }
