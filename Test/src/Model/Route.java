@@ -1,31 +1,28 @@
 package Model;
 
 public class Route {
-    private final int TAILLE_X = 8;
-    private final int TAILLE_Y = 8;
 
     public Case[][] tabCase;
 
-    // R = Rien, D = Décision, G = goudron, A = attente, C = Conflit
-    private String intersection =
-
-            "RRRGGRRR" +
-            "RRRDGRRR" +
-            "RRRAGRRR" +
-            "GGGCCADG" +
-            "GDACCGGG" +
-            "RRRGARRR" +
-            "RRRGDRRR" +
-            "RRRGGRRR" ;
-
     public Route()
     {
+        int TAILLE_X = 8;
+        int TAILLE_Y = 8;
         tabCase = new Case[TAILLE_X][TAILLE_Y];
+        String intersection = "RRRGGRRR" +
+                "RRRDGRRR" +
+                "RRRAGRRR" +
+                "GGGCCADG" +
+                "GDACCGGG" +
+                "RRRGARRR" +
+                "RRRGDRRR" +
+                "RRRGGRRR";
 
         for (int i = 0; i < TAILLE_X; i++)
         {
             for (int j = 0; j < TAILLE_Y; j++)
             {
+                // R = Rien, D = Décision, G = goudron, A = attente, C = Conflit
                 switch (intersection.charAt(TAILLE_X * i +j))
                 {
                     case 'G':

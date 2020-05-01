@@ -1,7 +1,5 @@
 package Model;
 
-import VueController.Main;
-
 import java.util.ArrayList;
 import java.util.Observable;
 
@@ -9,21 +7,23 @@ public abstract class Vehicule extends Observable implements Runnable {
     private int coordonneX;
     private int coordonneY;
 
-    private int SIZE_X;
-    private int SIZE_Y;
+    private final int SIZE_X;
+    private final int SIZE_Y;
 
     private Orientation orientation;
     private Direction direction;
 
+    // Ce booleen nous permet de gagner du temps sur la fonction dejaTourne
     private boolean dejaTourne;
+
     //Le but de ce booleen est de faire partir les voitures depuis l'extérieur de la carte.
     // Ainsi, il y aura plus de réalité au cours de la simulation
     private boolean tuable;
 
     private Voiture[] voitures;
-    private ArrayList fileAttente;
+    private ArrayList<Vehicule> fileAttente;
 
-    private Route route;
+    private final Route route;
 
     public void setCoordonneX(int coordonneX) {
         this.coordonneX = coordonneX;
@@ -62,7 +62,7 @@ public abstract class Vehicule extends Observable implements Runnable {
     public boolean getTuable() { return tuable;}
     public void setTuable(boolean b) { this.tuable = b;}
 
-    public ArrayList getFileAttente() {return fileAttente;}
+    public ArrayList<Vehicule> getFileAttente() {return fileAttente;}
     public void addFileAttente(Vehicule v) { fileAttente.add(v);}
     public void deleteFileAttente(Vehicule v) { fileAttente.remove(v);}
 
@@ -71,7 +71,7 @@ public abstract class Vehicule extends Observable implements Runnable {
     public Vehicule(int sizeX, int sizeY,
                     int coordonneX, int coordonneY,
                     Orientation orientation, Direction direction,
-                    Voiture[] voitures, ArrayList fileAttente,
+                    Voiture[] voitures, ArrayList<Vehicule> fileAttente,
                     Route route) {
         this.dejaTourne = false;
         this.tuable = false;
@@ -87,6 +87,7 @@ public abstract class Vehicule extends Observable implements Runnable {
     }
 
     abstract public void run();
+
 
     public boolean estEnVie() {
         if(getTuable()) {
