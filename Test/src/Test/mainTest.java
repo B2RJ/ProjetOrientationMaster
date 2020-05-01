@@ -1,10 +1,6 @@
 package Test;
 
-import Model.Direction;
-import Model.Orientation;
-import Model.Route;
-import Model.Voiture;
-import VueController.Main;
+import Model.*;
 
 import java.util.ArrayList;
 
@@ -14,14 +10,12 @@ public class mainTest {
     private final int SIZE_Y = 10;
 
     private Voiture[] voitures;
-    ArrayList fileAttente = new ArrayList();
+    ArrayList<Vehicule> fileAttente = new ArrayList<>();
 
     int nbTests = 5;
     float nbTestDejaFait = 0;
     int nbAssert = 0;
     Route route = new Route();
-
-    public void mainTest() {    }
 
     private void testVoiture() {
         System.out.println("Début des tests de la classe voiture");
@@ -170,7 +164,7 @@ public class mainTest {
         //Tests Avancer
 
         //Direction Sud
-        voitures[0].avancer();
+        voitures[0].avancerPrudament();
         assert (voitures[0].getCoordonneX() == 3) : "La voiture 0 a avancé en X";
         assert (voitures[0].getCoordonneY() == 0) : "La voiture 0 n'a pas avancé correctement en Y";
 
@@ -180,7 +174,7 @@ public class mainTest {
         voitures[0].setDirection(Direction.SN);
         voitures[0].setCoordonneY(8);
         //Test
-        voitures[0].avancer();
+        voitures[0].avancerPrudament();
         assert (voitures[0].getCoordonneX() == 3) : "La voiture 0 a avancé en X";
         assert (voitures[0].getCoordonneY() == 7) : "La voiture 0 n'a pas avancé correctement en Y";
 
@@ -191,7 +185,7 @@ public class mainTest {
         voitures[0].setCoordonneY(4);
         voitures[0].setCoordonneX(-1);
         //Test
-        voitures[0].avancer();
+        voitures[0].avancerPrudament();
         assert (voitures[0].getCoordonneX() == 0) : "La voiture 0 n'a pas avancé correctement en X";
         assert (voitures[0].getCoordonneY() == 4) : "La voiture 0 a avancé en Y";
 
@@ -202,7 +196,7 @@ public class mainTest {
         voitures[0].setCoordonneY(3);
         voitures[0].setCoordonneX(8);
         //Test
-        voitures[0].avancer();
+        voitures[0].avancerPrudament();
         assert (voitures[0].getCoordonneX() == 7) : "La voiture 0 n'a pas avancé correctement en X";
         assert (voitures[0].getCoordonneY() == 3) : "La voiture 0 a avancé en Y";
 
@@ -238,21 +232,21 @@ public class mainTest {
         }
 
         //On test toutes les voitures une première fois
-        assert (voitures[0].doisJeTourner() == false) : "La voiture 0 ne doit pas tourner";
-        assert (voitures[1].doisJeTourner() == true) : "La voiture 1 doit tourner";
-        assert (voitures[2].doisJeTourner() == false) : "La voiture 2 ne doit pas tourner";
+        assert (!voitures[0].doisJeTourner()) : "La voiture 0 ne doit pas tourner";
+        assert (voitures[1].doisJeTourner()) : "La voiture 1 doit tourner";
+        assert (!voitures[2].doisJeTourner()) : "La voiture 2 ne doit pas tourner";
 
-        assert (voitures[3].doisJeTourner() == true) : "La voiture 3 doit tourner";
-        assert (voitures[4].doisJeTourner() == false) : "La voiture 4 ne doit pas tourner";
-        assert (voitures[5].doisJeTourner() == false) : "La voiture 5 ne doit pas tourner";
+        assert (voitures[3].doisJeTourner()) : "La voiture 3 doit tourner";
+        assert (!voitures[4].doisJeTourner()) : "La voiture 4 ne doit pas tourner";
+        assert (!voitures[5].doisJeTourner()) : "La voiture 5 ne doit pas tourner";
 
-        assert (voitures[6].doisJeTourner() == false) : "La voiture 6 ne doit pas tourner";
-        assert (voitures[7].doisJeTourner() == false) : "La voiture 7 ne doit pas tourner";
-        assert (voitures[8].doisJeTourner() == true) : "La voiture 8  doit  tourner";
+        assert (!voitures[6].doisJeTourner()) : "La voiture 6 ne doit pas tourner";
+        assert (!voitures[7].doisJeTourner()) : "La voiture 7 ne doit pas tourner";
+        assert (voitures[8].doisJeTourner()) : "La voiture 8  doit  tourner";
 
-        assert (voitures[9].doisJeTourner() == false) : "La voiture 6 ne doit pas tourner";
-        assert (voitures[10].doisJeTourner() == true) : "La voiture 10  doit  tourner";
-        assert (voitures[11].doisJeTourner() == false) : "La voiture 10 ne doit pas tourner";
+        assert (!voitures[9].doisJeTourner()) : "La voiture 6 ne doit pas tourner";
+        assert (voitures[10].doisJeTourner()) : "La voiture 10  doit  tourner";
+        assert (!voitures[11].doisJeTourner()) : "La voiture 10 ne doit pas tourner";
 
         //On les fait avancer
         for (Voiture v : voitures) {
@@ -261,21 +255,21 @@ public class mainTest {
 
         //On vérifie si c'est juste sur la case conflit suivante
         // Les voitures commentés sont celles qui ont déjà tournée avant
-        assert (voitures[0].doisJeTourner() == false) : "La voiture 0 ne doit pas tourner";
+        assert (!voitures[0].doisJeTourner()) : "La voiture 0 ne doit pas tourner";
         //assert (voitures[1].doisJeTourner() == false) : "La voiture 1 ne doit pas tourner";
-        assert (voitures[2].doisJeTourner() == true) : "La voiture 2 doit tourner";
+        assert (voitures[2].doisJeTourner()) : "La voiture 2 doit tourner";
 
         //assert (voitures[3].doisJeTourner() == false) : "La voiture 3 ne doit pas tourner";
-        assert (voitures[4].doisJeTourner() == true) : "La voiture 4 doit tourner";
-        assert (voitures[5].doisJeTourner() == false) : "La voiture 5 ne doit pas tourner";
+        assert (voitures[4].doisJeTourner()) : "La voiture 4 doit tourner";
+        assert (!voitures[5].doisJeTourner()) : "La voiture 5 ne doit pas tourner";
 
-        assert (voitures[6].doisJeTourner() == false) : "La voiture 6 ne doit pas tourner";
-        assert (voitures[7].doisJeTourner() == true) : "La voiture 7 doit tourner";
+        assert (!voitures[6].doisJeTourner()) : "La voiture 6 ne doit pas tourner";
+        assert (voitures[7].doisJeTourner()) : "La voiture 7 doit tourner";
         //assert (voitures[8].doisJeTourner() == false) : "La voiture 8  ne doit pas  tourner";
 
-        assert (voitures[9].doisJeTourner() == false) : "La voiture 6 ne doit pas tourner";
+        assert (!voitures[9].doisJeTourner()) : "La voiture 6 ne doit pas tourner";
         //assert (voitures[10].doisJeTourner() == false) : "La voiture 10  ne doit pas  tourner";
-        assert (voitures[11].doisJeTourner() == true) : "La voiture 10 doit tourner";
+        assert (voitures[11].doisJeTourner()) : "La voiture 10 doit tourner";
 
 
         nbTestDejaFait = nbTestDejaFait + 1;
@@ -302,20 +296,20 @@ public class mainTest {
         System.out.println("Voiture0: ("+ voitures[0].getCoordonneX() + "," + voitures[0].getCoordonneY() + ")");
         System.out.println("Voiture2: ("+ voitures[2].getCoordonneX() + "," + voitures[2].getCoordonneY() + ")");
         //System.out.println(voitures[0].CaseSuivanteLibre());
-        assert (voitures[0].CaseSuivanteLibre() == false) : "La voie était libre";
-        assert (voitures[1].CaseSuivanteLibre() == false) : "La voie était libre";
-        assert (voitures[2].CaseSuivanteLibre() == false) : "La voie était libre";
-        assert (voitures[3].CaseSuivanteLibre() == false) : "La voie était libre";
+        assert (!voitures[0].CaseSuivanteLibre()) : "La voie était libre";
+        assert (!voitures[1].CaseSuivanteLibre()) : "La voie était libre";
+        assert (!voitures[2].CaseSuivanteLibre()) : "La voie était libre";
+        assert (!voitures[3].CaseSuivanteLibre()) : "La voie était libre";
 
         //Pour changer la configuration
         for (Voiture v : voitures) {
             v.avancer();
         }
 
-        assert (voitures[0].CaseSuivanteLibre() == true) : "La voie n'était pas libre";
-        assert (voitures[1].CaseSuivanteLibre() == true) : "La voie n'était pas libre";
-        assert (voitures[2].CaseSuivanteLibre() == true) : "La voie n'était pas libre";
-        assert (voitures[3].CaseSuivanteLibre() == true) : "La voie n'était pas libre";
+        assert (voitures[0].CaseSuivanteLibre()) : "La voie n'était pas libre";
+        assert (voitures[1].CaseSuivanteLibre()) : "La voie n'était pas libre";
+        assert (voitures[2].CaseSuivanteLibre()) : "La voie n'était pas libre";
+        assert (voitures[3].CaseSuivanteLibre()) : "La voie n'était pas libre";
 
         nbTestDejaFait = nbTestDejaFait + 1;
         nbAssert = nbAssert + 8;
@@ -323,12 +317,12 @@ public class mainTest {
     }
 
     public void runTest() {
-        System.out.println("");
+        System.out.println();
         System.out.println("Debut des tests.");
-        System.out.println("");
+        System.out.println();
 
         //Déclaration de la route
-        Route route = new Route();
+        //Route route = new Route();
 
         //Tests de la classe Voiture
         testVoiture();
@@ -359,7 +353,7 @@ public class mainTest {
         System.out.println("Le nombres d'asserts réalisé est de: " + nbAssert);
         System.out.println("Nous avons réalisé " + nbTestDejaFait + " test.");
 
-        System.out.println("");
+        System.out.println();
         System.out.println("Fin des tests.");
     }
 }

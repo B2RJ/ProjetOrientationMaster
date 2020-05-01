@@ -8,5 +8,5 @@ public enum Orientation {
     Nord,
     Sud,
     Est,
-    Ouest;
+    Ouest
 }

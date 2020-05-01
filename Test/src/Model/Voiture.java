@@ -1,24 +1,15 @@
 package Model;
 
-
-import VueController.Main;
-import javafx.application.Application;
-
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Voiture extends Vehicule {
-    private int coordonneX;
-    private int coordonneY;
-
-    private Orientation orientation;
-    private Direction direction;
 
     public Voiture(int sizeX, int sizeY,
                    int coordonneX, int coordonneY,
                    Orientation orientation, Direction direction,
-                   Voiture[] voitures, ArrayList fileAttente,
+                   Voiture[] voitures, ArrayList<Vehicule> fileAttente,
                    Route route) {
         super( sizeX,  sizeY,  coordonneX,  coordonneY,  orientation,  direction, voitures, fileAttente, route);
     }
@@ -26,17 +17,11 @@ public class Voiture extends Vehicule {
     public void realiserAction() {
         Case[][] maRoute = getRoute().getTabCase();
         if (getCoordonneY() > -1 && getCoordonneX() > -1 && getCoordonneX() < 8 && getCoordonneY() < 8) {
-            //System.out.println("Attente: "  + (maRoute[getCoordonneY()][getCoordonneX()] instanceof Attente));
-            //System.out.println("Decision: " +(maRoute[getCoordonneY()][getCoordonneX()] instanceof Decision));
             if (maRoute[getCoordonneY()][getCoordonneX()] instanceof Decision) {
-                //System.out.println("Je suis sur une décision");
                 addFileAttente(this);
-                //System.out.println("vide après ajout? " + (getFileAttente().isEmpty()));
                 avancerPrudament();
             } else {
                 if (maRoute[getCoordonneY()][getCoordonneX()] instanceof Attente) {
-                    //System.out.println("Je suis sur une attente");
-                    //System.out.println("vide ? " + (getFileAttente().isEmpty()));
                     if(!getFileAttente().isEmpty()) {
                         if (getFileAttente().get(0) == this) {
                             avancerPrudament();
@@ -45,7 +30,6 @@ public class Voiture extends Vehicule {
                 } else {
                     if (maRoute[getCoordonneY()][getCoordonneX()] instanceof Conflit) {
                         if ( !getDejaTourner() && doisJeTourner()) {
-                            System.out.println("Oui, je dois tourner");
                             //fonction qui tourne maintenant
                             Direction d = getDirection();
                             if(d == Direction.EN || d == Direction.ON) {
@@ -67,11 +51,9 @@ public class Voiture extends Vehicule {
                             setDejaTourne(true);
                         }
                         else {
-                            System.out.println("Non, je ne dois pas tourner");
                             avancerPrudament();
                             if (!(maRoute[getCoordonneY()][getCoordonneX()] instanceof Conflit)) {
                                 deleteFileAttente(this);
-                                //System.out.println("vide après ma suppresion ? " + (getFileAttente().isEmpty()));
                             }
                         }
                     } else if (maRoute[getCoordonneY()][getCoordonneX()] instanceof Goudron) {
@@ -82,7 +64,6 @@ public class Voiture extends Vehicule {
         } else {
             avancerEnDehorsDeLaMap();
         }
-        //System.out.println("X: " + getCoordonneX() + " Y: " + getCoordonneY());
     }
 
     public void avancer() {
@@ -119,7 +100,7 @@ public class Voiture extends Vehicule {
 
     public boolean doisJeTourner() {
         Direction maDirection = getDirection();
-        ArrayList tourne1 = new ArrayList();
+        ArrayList<Direction> tourne1 = new ArrayList<>();
         tourne1.add(Direction.NO);
         tourne1.add(Direction.OS);
         tourne1.add(Direction.EN);
@@ -129,33 +110,13 @@ public class Voiture extends Vehicule {
         }
         switch (maDirection) {
             case NE:
-                if(getCoordonneX() == 3 && getCoordonneY() == 4 ) {
-                    return true;
-                }
-                else {
-                    return false;
-                }
+                return getCoordonneX() == 3 && getCoordonneY() == 4;
             case SO:
-                if(getCoordonneX() == 4 && getCoordonneY() == 3) {
-                    return true;
-                }
-                else {
-                    return false;
-                }
+                return getCoordonneX() == 4 && getCoordonneY() == 3;
             case ES:
-                if(getCoordonneX() == 3 && getCoordonneY() == 3 ) {
-                    return true;
-                }
-                else {
-                    return false;
-                }
+                return getCoordonneX() == 3 && getCoordonneY() == 3;
             case ON:
-                if(getCoordonneX() == 4 && getCoordonneY() == 4 ) {
-                    return true;
-                }
-                else {
-                    return false;
-                }
+                return getCoordonneX() == 4 && getCoordonneY() == 4;
             default:
                 return false;
         }
