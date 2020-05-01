@@ -1,4 +1,4 @@
-package Tests;
+package Test;
 
 import Model.Direction;
 import Model.Orientation;
@@ -16,7 +16,7 @@ public class mainTest {
     private Voiture[] voitures;
     ArrayList fileAttente = new ArrayList();
 
-    int nbTests = 4;
+    int nbTests = 5;
     float nbTestDejaFait = 0;
     int nbAssert = 0;
     Route route = new Route();
@@ -212,21 +212,21 @@ public class mainTest {
 
         //Creation des voitures
         voitures = new Voiture[] {
-                new Voiture(SIZE_X, SIZE_Y, 3, 4, Orientation.Sud, Direction.NS, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, 3, 4, Orientation.Sud, Direction.NO, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, 3, 4, Orientation.Sud, Direction.NE, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 3, 3, Orientation.Sud, Direction.NS, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 3, 3, Orientation.Sud, Direction.NO, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 3, 3, Orientation.Sud, Direction.NE, voitures, fileAttente, route),
 
-                new Voiture(SIZE_X, SIZE_Y, 4, 5, Orientation.Nord, Direction.SE, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, 4, 5, Orientation.Nord, Direction.SO, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, 4, 5, Orientation.Nord, Direction.SN, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 4, 4, Orientation.Nord, Direction.SE, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 4, 4, Orientation.Nord, Direction.SO, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 4, 4, Orientation.Nord, Direction.SN, voitures, fileAttente, route),
 
-                new Voiture(SIZE_X, SIZE_Y, 4, 4, Orientation.Est, Direction.OE, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, 4, 4, Orientation.Est, Direction.ON, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, 4, 4, Orientation.Est, Direction.OS, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 3, 4, Orientation.Est, Direction.OE, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 3, 4, Orientation.Est, Direction.ON, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 3, 4, Orientation.Est, Direction.OS, voitures, fileAttente, route),
 
-                new Voiture(SIZE_X, SIZE_Y, 3, 5, Orientation.Ouest, Direction.EO, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, 3, 5, Orientation.Ouest, Direction.EN, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, 3, 5, Orientation.Ouest, Direction.ES, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 4, 3, Orientation.Ouest, Direction.EO, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 4, 3, Orientation.Ouest, Direction.EN, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 4, 3, Orientation.Ouest, Direction.ES, voitures, fileAttente, route),
         };
 
         for (Voiture v : voitures) {
@@ -238,23 +238,83 @@ public class mainTest {
         assert (voitures[1].doisJeTourner() == true) : "La voiture 1 doit tourner";
         assert (voitures[2].doisJeTourner() == false) : "La voiture 2 ne doit pas tourner";
 
-        assert (voitures[3].doisJeTourner() == false) : "La voiture 3 ne doit pas tourner";
+        assert (voitures[3].doisJeTourner() == true) : "La voiture 3 doit tourner";
+        assert (voitures[4].doisJeTourner() == false) : "La voiture 4 ne doit pas tourner";
+        assert (voitures[5].doisJeTourner() == false) : "La voiture 5 ne doit pas tourner";
+
+        assert (voitures[6].doisJeTourner() == false) : "La voiture 6 ne doit pas tourner";
+        assert (voitures[7].doisJeTourner() == false) : "La voiture 7 ne doit pas tourner";
+        assert (voitures[8].doisJeTourner() == true) : "La voiture 8  doit  tourner";
+
+        assert (voitures[9].doisJeTourner() == false) : "La voiture 6 ne doit pas tourner";
+        assert (voitures[10].doisJeTourner() == true) : "La voiture 10  doit  tourner";
+        assert (voitures[11].doisJeTourner() == false) : "La voiture 10 ne doit pas tourner";
+
+        //On les fait avancer
+        for (Voiture v : voitures) {
+            v.avancer();
+        }
+
+        //On vérifie si c'est juste sur la case conflit suivante
+        // Les voitures commentés sont celles qui ont déjà tournée avant
+        assert (voitures[0].doisJeTourner() == false) : "La voiture 0 ne doit pas tourner";
+        //assert (voitures[1].doisJeTourner() == false) : "La voiture 1 ne doit pas tourner";
+        assert (voitures[2].doisJeTourner() == true) : "La voiture 2 doit tourner";
+
+        //assert (voitures[3].doisJeTourner() == false) : "La voiture 3 ne doit pas tourner";
         assert (voitures[4].doisJeTourner() == true) : "La voiture 4 doit tourner";
         assert (voitures[5].doisJeTourner() == false) : "La voiture 5 ne doit pas tourner";
 
         assert (voitures[6].doisJeTourner() == false) : "La voiture 6 ne doit pas tourner";
         assert (voitures[7].doisJeTourner() == true) : "La voiture 7 doit tourner";
-        assert (voitures[8].doisJeTourner() == false) : "La voiture 8 ne doit pas tourner";
+        //assert (voitures[8].doisJeTourner() == false) : "La voiture 8  ne doit pas  tourner";
 
         assert (voitures[9].doisJeTourner() == false) : "La voiture 6 ne doit pas tourner";
-        assert (voitures[10].doisJeTourner() == false) : "La voiture 10 ne doit pas tourner";
+        //assert (voitures[10].doisJeTourner() == false) : "La voiture 10  ne doit pas  tourner";
         assert (voitures[11].doisJeTourner() == true) : "La voiture 10 doit tourner";
 
-//        voitures[0].avancer();
-//        voitures[2].avancer();
-//        assert (voitures[0].doisJeTourner() == false) : "La voiture 0 ne dois pas tourner";
-//        assert (voitures[2].doisJeTourner() == true) : "La voiture 2 dois tourner";
 
+        nbTestDejaFait = nbTestDejaFait + 1;
+        nbAssert = nbAssert + 20;
+        System.out.println("Début des tests pour tourner avec une seule voiture");
+    }
+
+    private void caseSuivanteLibre() {
+        System.out.println("Début des tests pour tourner avec une seule voiture");
+
+        //Creation des voitures
+        voitures = new Voiture[] {
+                new Voiture(SIZE_X, SIZE_Y, 3, 3, Orientation.Sud, Direction.NS, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 4, 4, Orientation.Nord, Direction.SN, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 3, 4, Orientation.Est, Direction.OE, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 4, 3, Orientation.Ouest, Direction.EO, voitures, fileAttente, route),
+        };
+
+        for (Voiture v : voitures) {
+            v.setVoiture(voitures);
+        }
+
+        //On test toutes les voitures devant elle
+        System.out.println("Voiture0: ("+ voitures[0].getCoordonneX() + "," + voitures[0].getCoordonneY() + ")");
+        System.out.println("Voiture2: ("+ voitures[2].getCoordonneX() + "," + voitures[2].getCoordonneY() + ")");
+        //System.out.println(voitures[0].CaseSuivanteLibre());
+        assert (voitures[0].CaseSuivanteLibre() == false) : "La voie était libre";
+        assert (voitures[1].CaseSuivanteLibre() == false) : "La voie était libre";
+        assert (voitures[2].CaseSuivanteLibre() == false) : "La voie était libre";
+        assert (voitures[3].CaseSuivanteLibre() == false) : "La voie était libre";
+
+        //Pour changer la configuration
+        for (Voiture v : voitures) {
+            v.avancer();
+        }
+
+        assert (voitures[0].CaseSuivanteLibre() == true) : "La voie n'était pas libre";
+        assert (voitures[1].CaseSuivanteLibre() == true) : "La voie n'était pas libre";
+        assert (voitures[2].CaseSuivanteLibre() == true) : "La voie n'était pas libre";
+        assert (voitures[3].CaseSuivanteLibre() == true) : "La voie n'était pas libre";
+
+        nbTestDejaFait = nbTestDejaFait + 1;
+        nbAssert = nbAssert + 8;
         System.out.println("Début des tests pour tourner avec une seule voiture");
     }
 
@@ -268,29 +328,33 @@ public class mainTest {
 
         //Tests de la classe Voiture
         testVoiture();
+        System.out.println();
         System.out.println("Nous avons réalisé " + (nbTestDejaFait/nbTests)*100 + "% des tests.");
 
         //Tests pour avancer à une seule voiture
         avancerUneSeuleVoiture();
+        System.out.println();
         System.out.println("Nous avons réalisé " + (nbTestDejaFait/nbTests)*100 + "% des tests.");
 
         //Tests pour avancer prudement une seule voiture
         avancerPrudementUneSeuleVoiture();
+        System.out.println();
         System.out.println("Nous avons réalisé " + (nbTestDejaFait/nbTests)*100 + "% des tests.");
 
         //Tests de la fonction doisJeTourner pour une seule voiture
         doisJeTournerUneSeuleVoiture();
+        System.out.println();
         System.out.println("Nous avons réalisé " + (nbTestDejaFait/nbTests)*100 + "% des tests.");
 
-
+        //Tests si la case suivante est libre
+        caseSuivanteLibre();
         System.out.println();
+        System.out.println("Nous avons réalisé " + (nbTestDejaFait/nbTests)*100 + "% des tests.");
+
+        //Bilan
         System.out.println("Le nombres d'asserts réalisé est de: " + nbAssert);
-        if (nbTestDejaFait > 1) {
-            System.out.println("Nous avons réalisé " + nbTestDejaFait + " tests.");
-        }
-        else {
-            System.out.println("Nous avons réalisé " + nbTestDejaFait + " test.");
-        }
+        System.out.println("Nous avons réalisé " + nbTestDejaFait + " test.");
+
         System.out.println("");
         System.out.println("Fin des tests.");
     }

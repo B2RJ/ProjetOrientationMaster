@@ -47,4 +47,6 @@ public class Route {
             }
         }
     }
+
+    public Case[][] getTabCase() {return tabCase;}
 }
