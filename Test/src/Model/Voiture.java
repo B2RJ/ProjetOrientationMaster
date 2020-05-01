@@ -112,6 +112,9 @@ public class Voiture extends Vehicule {
 
     public void avancerEnDehorsDeLaMap() {
         avancer();
+        if (getCoordonneY() > -1 && getCoordonneX() > -1 && getCoordonneX() < 8 && getCoordonneY() < 8) {
+            this.setTuable(true);
+        }
     }
 
     public boolean doisJeTourner() {

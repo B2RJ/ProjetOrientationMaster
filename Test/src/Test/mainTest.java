@@ -74,18 +74,22 @@ public class mainTest {
 
         //Vérification de la fonction estEnVie()
         assert (voitures[0].estEnVie()) : "La voiture0 est pas en vie";
+        voitures[0].setTuable(true);
         voitures[0].setCoordonneY(-2);
         assert (!voitures[0].estEnVie()) : "La voiture0 est en vie";
 
         assert (voitures[1].estEnVie()) : "La voiture1 est pas en vie";
+        voitures[1].setTuable(true);
         voitures[1].setCoordonneY(11);
-        assert (!voitures[0].estEnVie()) : "La voiture1 est en vie";
+        assert (!voitures[1].estEnVie()) : "La voiture1 est en vie";
 
         assert (voitures[2].estEnVie()) : "La voiture2 est pas en vie";
+        voitures[2].setTuable(true);
         voitures[2].setCoordonneX(-3);
         assert (!voitures[2].estEnVie()) : "La voiture2 est en vie";
 
         assert (voitures[3].estEnVie()) : "La voiture3 est pas en vie";
+        voitures[3].setTuable(true);
         voitures[3].setCoordonneX(11);
         assert (!voitures[3].estEnVie()) : "La voiture3 est en vie";
 
