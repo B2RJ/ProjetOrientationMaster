@@ -64,17 +64,17 @@ public class Main extends Application {
         //Déclaration des voiture
         voitures = new Voiture[] {
                 new Voiture(SIZE_X, SIZE_Y, 3, -1, Orientation.Sud, Direction.NS, voitures, fileAttente, route),
-                //new Voiture(SIZE_X, SIZE_Y, 3, -1, Orientation.Sud, Direction.NO, voitures, fileAttente, route),
-                //new Voiture(SIZE_X, SIZE_Y, 3, -1, Orientation.Sud, Direction.NE, voitures, fileAttente, route),
-                //new Voiture(SIZE_X, SIZE_Y, 4, 8, Orientation.Nord, Direction.SN, voitures, fileAttente, route),
-                //new Voiture(SIZE_X, SIZE_Y, 4, 8, Orientation.Nord, Direction.SE, voitures, fileAttente, route),
-                //new Voiture(SIZE_X, SIZE_Y, 4, 8, Orientation.Nord, Direction.SO, voitures, fileAttente, route),
-                //new Voiture(SIZE_X, SIZE_Y, -1, 4, Orientation.Est, Direction.OE, voitures, fileAttente, route),
-                //new Voiture(SIZE_X, SIZE_Y, -1, 4, Orientation.Est, Direction.ON, voitures, fileAttente, route),
-                //new Voiture(SIZE_X, SIZE_Y, -1, 4, Orientation.Est, Direction.OS, voitures, fileAttente, route),
-                //new Voiture(SIZE_X, SIZE_Y, 8, 3, Orientation.Ouest, Direction.EO, voitures, fileAttente, route),
-                //new Voiture(SIZE_X, SIZE_Y, 8, 3, Orientation.Ouest, Direction.EN, voitures, fileAttente, route),
-                //new Voiture(SIZE_X, SIZE_Y, 8, 3, Orientation.Ouest, Direction.ES, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 3, -3, Orientation.Sud, Direction.NO, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 3, -7, Orientation.Sud, Direction.NE, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 4, 8, Orientation.Nord, Direction.SN, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 4, 14, Orientation.Nord, Direction.SE, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 4, 12, Orientation.Nord, Direction.SO, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, -1, 4, Orientation.Est, Direction.OE, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, -4, 4, Orientation.Est, Direction.ON, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, -7, 4, Orientation.Est, Direction.OS, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 8, 3, Orientation.Ouest, Direction.EO, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 10, 3, Orientation.Ouest, Direction.EN, voitures, fileAttente, route),
+                new Voiture(SIZE_X, SIZE_Y, 12, 3, Orientation.Ouest, Direction.ES, voitures, fileAttente, route),
 
         };
 
@@ -98,7 +98,6 @@ public class Main extends Application {
                 for (int i = 0 ; i < SIZE_X ; i++) {
                     for (int j = 0 ; j < SIZE_Y  ; j++) {
                         tab[j][i].setImage(vert);
-
                         if (route.tabCase[i][j] instanceof Goudron) {
                             if(route.tabCase[i][j] instanceof Attente) {
                                 tab[j][i].setImage(attente);

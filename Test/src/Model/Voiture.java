@@ -52,9 +52,9 @@ public class Voiture extends Vehicule {
                         }
                         else {
                             avancerPrudament();
-                            if (!(maRoute[getCoordonneY()][getCoordonneX()] instanceof Conflit)) {
-                                deleteFileAttente(this);
-                            }
+                        }
+                        if (!(maRoute[getCoordonneY()][getCoordonneX()] instanceof Conflit)) {
+                            deleteFileAttente(this);
                         }
                     } else if (maRoute[getCoordonneY()][getCoordonneX()] instanceof Goudron) {
                         avancerPrudament();
@@ -163,12 +163,14 @@ public class Voiture extends Vehicule {
             this.realiserAction();
             setChanged();
             notifyObservers();
+            int i = (int) (Math.random() * ( 200 - 1 ));
             try {
-                Thread.sleep(500);
+                Thread.sleep(1000 + i);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Vehicule.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        this.deleteObservers();
     }
 
     public void start() {
