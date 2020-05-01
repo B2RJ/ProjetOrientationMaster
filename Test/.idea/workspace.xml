@@ -151,7 +151,7 @@
       <recent name="$PROJECT_DIR$/src/img" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Dev">
+  <component name="RunManager" selected="Application.Tests">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -427,7 +427,9 @@
     <MESSAGE value="Ne sert plus à rien" />
     <MESSAGE value="Ajout d'un back-ground de fond et changement de taille" />
     <MESSAGE value="Changement de l'image de la voiture en fonction de la position, de l'orientation et de la direction" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changement de l'image de la voiture en fonction de la position, de l'orientation et de la direction" />
+    <MESSAGE value="Plusieurs voitures peuvent circuler en même temps" />
+    <MESSAGE value="Ne servait à rien et prenais de la place" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ne servait à rien et prenais de la place" />
   </component>
   <component name="WindowStateProjectService">
     <state x="369" y="89" width="854" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588323395454">
