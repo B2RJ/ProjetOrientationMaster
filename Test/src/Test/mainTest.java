@@ -293,8 +293,6 @@ public class mainTest {
         }
 
         //On test toutes les voitures devant elle
-        System.out.println("Voiture0: ("+ voitures[0].getCoordonneX() + "," + voitures[0].getCoordonneY() + ")");
-        System.out.println("Voiture2: ("+ voitures[2].getCoordonneX() + "," + voitures[2].getCoordonneY() + ")");
         //System.out.println(voitures[0].CaseSuivanteLibre());
         assert (!voitures[0].CaseSuivanteLibre()) : "La voie était libre";
         assert (!voitures[1].CaseSuivanteLibre()) : "La voie était libre";
