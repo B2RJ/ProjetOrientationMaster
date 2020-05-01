@@ -63,8 +63,19 @@ public abstract class Vehicule extends Observable implements Runnable {
     public void setTuable(boolean b) { this.tuable = b;}
 
     public ArrayList<Vehicule> getFileAttente() {return fileAttente;}
-    public void addFileAttente(Vehicule v) { fileAttente.add(v);}
-    public void deleteFileAttente(Vehicule v) { fileAttente.remove(v);}
+    public void addFileAttente(Vehicule v) {
+        //On utilise le if au cas où nous somme à l'arret sur une case Décision
+        if(!fileAttente.contains(v)) {
+            fileAttente.add(v);
+        }
+    }
+
+    public void deleteFileAttente(Vehicule v) {
+        // On utilise le while au cas où il y a deux accès en même temps sur la file
+        while(fileAttente.contains(this)) {
+            fileAttente.remove(v);
+        }
+    }
 
     public Route getRoute() {return route;}
 
