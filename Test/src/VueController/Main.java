@@ -24,6 +24,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
+        System.out.println("Debut");
         GridPane grid = new GridPane();
 
         //Chargement des images
@@ -62,30 +63,6 @@ public class Main extends Application {
         Route route = new Route();
 
         //Déclaration des voiture
-//        voitures = new Voiture[] {
-//                new Voiture(SIZE_X, SIZE_Y, 3, -1, Orientation.Sud, Direction.NS, voitures, fileAttente, route),
-//                new Voiture(SIZE_X, SIZE_Y, 3, -3, Orientation.Sud, Direction.NO, voitures, fileAttente, route),
-//                new Voiture(SIZE_X, SIZE_Y, 3, -7, Orientation.Sud, Direction.NE, voitures, fileAttente, route),
-//                new Voiture(SIZE_X, SIZE_Y, 4, 8, Orientation.Nord, Direction.SN, voitures, fileAttente, route),
-//                new Voiture(SIZE_X, SIZE_Y, 4, 14, Orientation.Nord, Direction.SE, voitures, fileAttente, route),
-//                new Voiture(SIZE_X, SIZE_Y, 4, 12, Orientation.Nord, Direction.SO, voitures, fileAttente, route),
-//                new Voiture(SIZE_X, SIZE_Y, -1, 4, Orientation.Est, Direction.OE, voitures, fileAttente, route),
-//                new Voiture(SIZE_X, SIZE_Y, -4, 4, Orientation.Est, Direction.ON, voitures, fileAttente, route),
-//                new Voiture(SIZE_X, SIZE_Y, -7, 4, Orientation.Est, Direction.OS, voitures, fileAttente, route),
-//                new Voiture(SIZE_X, SIZE_Y, 8, 3, Orientation.Ouest, Direction.EO, voitures, fileAttente, route),
-//                new Voiture(SIZE_X, SIZE_Y, 10, 3, Orientation.Ouest, Direction.EN, voitures, fileAttente, route),
-//                new Voiture(SIZE_X, SIZE_Y, 12, 3, Orientation.Ouest, Direction.ES, voitures, fileAttente, route),
-//        };
-//         voitures = new Voiture[200] ;
-//         for (int i = 0; i < 6 ; i++) {
-//             voitures[i] = voitureAleatoire(route);
-//         }
-//         System.out.println(voitures);
-//
-//        for (Voiture v : voitures) {
-//            v.setVoiture(voitures);
-//        }
-
         ArrayList<Voiture> voitures = new ArrayList<>();
         for (int i = 0; i < 25 ; i++) {
              voitures.add(voitureAleatoire(route));
@@ -95,7 +72,6 @@ public class Main extends Application {
             v.setVoiture(voitures);
         }
 
-
         //Déclaration de la scène + titre
         StackPane root = new StackPane();
         root.getChildren().add(grid);
@@ -103,7 +79,6 @@ public class Main extends Application {
         stage.setTitle("POPOPO POM");
         stage.setScene(scene);
         stage.show();
-
 
         Observer o = new Observer() {
             @Override
@@ -193,28 +168,13 @@ public class Main extends Application {
                                         }
                                         else { tab[i][j].setImage(imgVoiture_SN); }
                                         break;
-
                                 }
                             }
                         }
                     }
                 }
-
-//                //On rajoute des voitures ??
-//                if (voitures.size() < 7) {
-//                    System.out.println("Il y a " + voitures.size() + " voitures. Nous ajoutons des voitures");
-//                    Voiture newVoiture = voitureAleatoire(route);
-//                    System.out.println("Nouvelles voitures en (" + newVoiture.getCoordonneX() + "," + newVoiture.getCoordonneY() + ")");
-//                    newVoiture.addObserver();
-//                    newVoiture.start();
-//                    voitures.add(newVoiture);
-//
-//                    for (Voiture v : voitures) {
-//                        v.setVoiture(voitures);
-//                    }
-//                }
                 if(voitures.size() <= 0) {
-                    System.out.println("Fini");
+                    System.out.println("Fin");
                 }
             }
         };
@@ -311,7 +271,6 @@ public class Main extends Application {
         }
         return new Voiture(SIZE_X, SIZE_Y, coordX, coordY, o, d, null, fileAttente, route);
     }
-
 
     public static void startTest() {
         mainTest lesTests = new mainTest();

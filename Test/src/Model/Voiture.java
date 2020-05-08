@@ -172,27 +172,37 @@ public class Voiture extends Vehicule {
         return true;
     }
 
-    public int CombienDeVehiculesPeuventPasser() {
-        Direction D0 = getFileAttente().get(0).getDirection();
-        Direction D1 = null;
-        Direction D2 = null;
-        Direction D3 = null;
+    public Direction[] getDirectionFileAttente() {
+        Direction[] toReturn = new Direction[4];
+        toReturn[0] = getFileAttente().get(0).getDirection();
+        toReturn[1] = null;
+        toReturn[2] = null;
+        toReturn[3] = null;
         if(getFileAttente().size() > 1) {
-            // On vérifie que la voiture est bien sur une case attente
             if(getFileAttente().get(1).amIwaiting()) {
-                D1 = getFileAttente().get(1).getDirection();
+                toReturn[1] = getFileAttente().get(1).getDirection();
             }
         }
         if(getFileAttente().size() > 2) {
             if(getFileAttente().get(2).amIwaiting()) {
-                D2 = getFileAttente().get(2).getDirection();
+                toReturn[2] = getFileAttente().get(2).getDirection();
             }
         }
         if(getFileAttente().size() > 3) {
             if(getFileAttente().get(3).amIwaiting()) {
-                D3 = getFileAttente().get(3).getDirection();
+                toReturn[3] = getFileAttente().get(3).getDirection();
             }
         }
+        return toReturn;
+    }
+
+    public int CombienDeVehiculesPeuventPasser() {
+
+        Direction[] MyTab = getDirectionFileAttente();
+        Direction D0 = MyTab[0];
+        Direction D1 = MyTab[1];
+        Direction D2 = MyTab[2];
+        Direction D3 = MyTab[3];
 
         final boolean ENSE = (D1 == Direction.EN || D2 == Direction.EN || D3 == Direction.EN)
                 && (D1 == Direction.SE || D2 == Direction.SE || D3 == Direction.SE);
@@ -328,25 +338,11 @@ public class Voiture extends Vehicule {
 
     public boolean puisJePasser(int cmbVoiture){
 
-        Direction D0 = getFileAttente().get(0).getDirection();
-        Direction D1 = null;
-        Direction D2 = null;
-        Direction D3 = null;
-        if(getFileAttente().size() > 1) {
-            if(getFileAttente().get(1).amIwaiting()) {
-                D1 = getFileAttente().get(1).getDirection();
-            }
-        }
-        if(getFileAttente().size() > 2) {
-            if(getFileAttente().get(2).amIwaiting()) {
-                D2 = getFileAttente().get(2).getDirection();
-            }
-        }
-        if(getFileAttente().size() > 3) {
-            if(getFileAttente().get(3).amIwaiting()) {
-                D3 = getFileAttente().get(3).getDirection();
-            }
-        }
+        Direction[] MyTab = getDirectionFileAttente();
+        Direction D0 = MyTab[0];
+        Direction D1 = MyTab[1];
+        Direction D2 = MyTab[2];
+        Direction D3 = MyTab[3];
 
         switch (D0)
         {
