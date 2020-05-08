@@ -87,12 +87,8 @@ public class Main extends Application {
 //        }
 
         ArrayList<Voiture> voitures = new ArrayList<>();
-        for (int i = 0; i < 2 ; i++) {
+        for (int i = 0; i < 25 ; i++) {
              voitures.add(voitureAleatoire(route));
-             System.out.println("===========");
-             System.out.println("Direction: " + voitures.get(i).getDirection());
-             System.out.println("Orientation: " + voitures.get(i).getOrientation());
-             System.out.println("Coordonnées: (" + voitures.get(i).getCoordonneX() + "," + voitures.get(i).getCoordonneY() + ")");
         }
 
         for (Voiture v : voitures) {
@@ -203,6 +199,23 @@ public class Main extends Application {
                         }
                     }
                 }
+
+//                //On rajoute des voitures ??
+//                if (voitures.size() < 7) {
+//                    System.out.println("Il y a " + voitures.size() + " voitures. Nous ajoutons des voitures");
+//                    Voiture newVoiture = voitureAleatoire(route);
+//                    System.out.println("Nouvelles voitures en (" + newVoiture.getCoordonneX() + "," + newVoiture.getCoordonneY() + ")");
+//                    newVoiture.addObserver();
+//                    newVoiture.start();
+//                    voitures.add(newVoiture);
+//
+//                    for (Voiture v : voitures) {
+//                        v.setVoiture(voitures);
+//                    }
+//                }
+                if(voitures.size() <= 0) {
+                    System.out.println("Fini");
+                }
             }
         };
 
@@ -228,8 +241,8 @@ public class Main extends Application {
                 // On fixe une Direction
                 direction  = (int) (Math.random() * ( 4 - 1 ));
                 coordX = 4;
-                coordY = (int) (Math.random() * ( 15 - 8 ));
-                System.out.println(coordY);
+                coordY = (int) (Math.random() * ( 55 - 8 ));
+                coordY = 8 + coordY;
                 switch (direction) {
                     case 1:
                         d = Direction.SO;
@@ -244,8 +257,8 @@ public class Main extends Application {
             case 2 :
                 o = Orientation.Sud;
                 coordX = 3;
-                coordY = (int) (Math.random() * ( -8 - (-1) ));
-                System.out.println(coordY);
+                coordY = (int) (Math.random() * ( -58 - (-1) ));
+                coordY = coordY - 8;
                 // On fixe une Direction
                 direction  = (int) (Math.random() * ( 4 - 1 ));
                 switch (direction) {
@@ -261,8 +274,8 @@ public class Main extends Application {
                 break;
             case 3 :
                 o = Orientation.Est;
-                coordX = (int) (Math.random() * ( -8 - (-1) ));
-                System.out.println(coordX);
+                coordX = (int) (Math.random() * ( -58 - (-1) ));
+                coordX = coordX - 8;
                 coordY = 4;
                 // On fixe une Direction
                 direction  = (int) (Math.random() * ( 4 - 1 ));
@@ -279,8 +292,8 @@ public class Main extends Application {
                 break;
             default:
                 o = Orientation.Ouest;
-                coordX = (int) (Math.random() * ( 15 - 8 ));
-                System.out.println(coordX);
+                coordX = (int) (Math.random() * ( 55 - 8 ));
+                coordX = 8 + coordX;
                 coordY = 3;
                 // On fixe une Direction
                 direction  = (int) (Math.random() * ( 4 - 1 ));
