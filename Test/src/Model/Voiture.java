@@ -9,7 +9,7 @@ public class Voiture extends Vehicule {
     public Voiture(int sizeX, int sizeY,
                    int coordonneX, int coordonneY,
                    Orientation orientation, Direction direction,
-                   Voiture[] voitures, ArrayList<Vehicule> fileAttente,
+                   ArrayList<Voiture> voitures, ArrayList<Vehicule> fileAttente,
                    Route route) {
         super( sizeX,  sizeY,  coordonneX,  coordonneY,  orientation,  direction, voitures, fileAttente, route);
     }
