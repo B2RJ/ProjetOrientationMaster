@@ -9,7 +9,7 @@ public class Voiture extends Vehicule {
     public Voiture(int sizeX, int sizeY,
                    int coordonneX, int coordonneY,
                    Orientation orientation, Direction direction,
-                   Voiture[] voitures, ArrayList<Vehicule> fileAttente,
+                   ArrayList<Voiture> voitures, ArrayList<Vehicule> fileAttente,
                    Route route) {
         super( sizeX,  sizeY,  coordonneX,  coordonneY,  orientation,  direction, voitures, fileAttente, route);
     }
@@ -754,7 +754,7 @@ public class Voiture extends Vehicule {
             notifyObservers();
             int i = (int) (Math.random() * ( 300 - 1 ));
             try {
-                Thread.sleep(1000 + i);
+                Thread.sleep(750 + i);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Vehicule.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -762,6 +762,9 @@ public class Voiture extends Vehicule {
 //            setChanged();
 //            notifyObservers();
         }
+        getVoitures().remove(this);
+        setChanged();
+        notifyObservers();
         this.deleteObservers();
     }
 
