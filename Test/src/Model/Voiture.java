@@ -384,37 +384,38 @@ public class Voiture extends Vehicule {
                         && getDirection() != Direction.EN
                         && getDirection() != Direction.OS
                         && getDirection() != Direction.SN) { return false; }
-                    if((D1 == Direction.OE || D2 == Direction.OE
-                        && D1 == Direction.EN || D2 == Direction.EN)
-                        ||
-                        (D1 == Direction.OS || D2 == Direction.OS
-                        && D1 == Direction.SN || D2 == Direction.SN)) {
-                        return getFileAttente().get(1) == this || getFileAttente().get(2) == this;
-                    }
-                    if((D1 == Direction.OE || D3 == Direction.OE
-                            && D1 == Direction.EN || D3 == Direction.EN)
-                            ||
-                            (D1 == Direction.OS || D3 == Direction.OS
-                                    && D1 == Direction.SN || D3 == Direction.SN)) {
-                        if (getFileAttente().get(1) == this || getFileAttente().get(3) == this ) {
-                            return true;
-                        } else {
-                            return false;
+                    if(D1 == Direction.OE || D1 == Direction.EN) {
+                        if ((D2 == Direction.OE || D2 == Direction.EN) && D1 != D2) {
+                            return getFileAttente().get(1) == this || getFileAttente().get(2) == this;
+                        }
+                        if ((D3 == Direction.OE || D3 == Direction.EN) && D1 != D3) {
+                            return getFileAttente().get(1) == this || getFileAttente().get(3) == this;
                         }
                     }
+                    if(D1 == Direction.OS || D1 == Direction.SN) {
+                        if ((D2 == Direction.OS || D2 == Direction.SN) && D1 != D2) {
+                            return getFileAttente().get(1) == this || getFileAttente().get(2) == this;
+                        }
+                        if ((D3 == Direction.OS || D3 == Direction.SN) && D1 != D3) {
+                            return getFileAttente().get(1) == this || getFileAttente().get(3) == this;
+                        }
+                    }
+
                     if((D2 == Direction.OE || D3 == Direction.OE
-                            && D2 == Direction.EN || D3 == Direction.EN)
-                            ||
-                            (D2 == Direction.OS || D3 == Direction.OS
-                                    && D2 == Direction.SN || D3 == Direction.SN)) {
-                        if (getFileAttente().get(2) == this || getFileAttente().get(3) == this ) {
-                            return true;
-                        } else {
-                            return false;
-                        }
+                     && D2 == Direction.EN || D3 == Direction.EN)
+                     ||
+                       (D2 == Direction.OS || D3 == Direction.OS
+                     && D2 == Direction.SN || D3 == Direction.SN)) {
+                        return getFileAttente().get(2) == this || getFileAttente().get(3) == this;
                     }
                 } else {
                     // Sinon, juste 2 voitures peuvent passer
+                    boolean b = getFileAttente().get(1).getDirection() != Direction.SE
+                            && getFileAttente().get(1).getDirection() != Direction.EN
+                            && getFileAttente().get(1).getDirection() != Direction.SN
+                            && getFileAttente().get(1).getDirection() != Direction.OE
+                            && getFileAttente().get(1).getDirection() != Direction.OS
+                            && getFileAttente().get(1).getDirection() != Direction.ON;
                     switch(getFileAttente().indexOf(this))
                     {
                         // Si je suis deuxième de la file, c'est donc à moi de passer
@@ -422,21 +423,11 @@ public class Voiture extends Vehicule {
                             return true;
                         case 2:
                             //Si je suis troisième de la file, je regarde que le deuxième ne puisse pas passer
-                            return getFileAttente().get(1).getDirection() != Direction.SE
-                                    && getFileAttente().get(1).getDirection() != Direction.EN
-                                    && getFileAttente().get(1).getDirection() != Direction.SN
-                                    && getFileAttente().get(1).getDirection() != Direction.OE
-                                    && getFileAttente().get(1).getDirection() != Direction.OS
-                                    && getFileAttente().get(1).getDirection() != Direction.ON;
+                            return b;
                         case 3:
                             //Si je suis le quatrième de la file, je regarde que le deuxieme
                             //et le troisième ne puissent pas passer
-                            return getFileAttente().get(1).getDirection() != Direction.SE
-                                    && getFileAttente().get(1).getDirection() != Direction.EN
-                                    && getFileAttente().get(1).getDirection() != Direction.SN
-                                    && getFileAttente().get(1).getDirection() != Direction.OE
-                                    && getFileAttente().get(1).getDirection() != Direction.OS
-                                    && getFileAttente().get(1).getDirection() != Direction.ON
+                            return  b
                                     && getFileAttente().get(2).getDirection() != Direction.SE
                                     && getFileAttente().get(2).getDirection() != Direction.EN
                                     && getFileAttente().get(2).getDirection() != Direction.SN
@@ -481,22 +472,20 @@ public class Voiture extends Vehicule {
                             && getDirection() != Direction.OS
                             && getDirection() != Direction.EN
                             && getDirection() != Direction.NS) { return false; }
-                    if((D1 == Direction.EO || D2 == Direction.EO
-                     && D1 == Direction.OS || D2 == Direction.OS)
-                     ||
-                       (D1 == Direction.EN || D2 == Direction.EN
-                     && D1 == Direction.NS || D2 == Direction.NS)) {
-                        return getFileAttente().get(1) == this || getFileAttente().get(2) == this;
+                    if (D1 == Direction.EO || D1 == Direction.OS){
+                        if ((D2 == Direction.EO || D2 == Direction.OS)&& D1 != D2) {
+                            return getFileAttente().get(1) == this || getFileAttente().get(2) == this;
+                        }
+                        if ((D3 == Direction.EO || D3 == Direction.OS) && D1 != D3) {
+                            return getFileAttente().get(1) == this || getFileAttente().get(3) == this;
+                        }
                     }
-                    if((D1 == Direction.EO || D3 == Direction.EO
-                     && D1 == Direction.OS || D3 == Direction.OS)
-                     ||
-                       (D1 == Direction.EN || D3 == Direction.EN
-                     && D1 == Direction.NS || D3 == Direction.NS)) {
-                        if (getFileAttente().get(1) == this || getFileAttente().get(3) == this ) {
-                            return true;
-                        } else {
-                            return false;
+                    if (D1 == Direction.EN || D1 == Direction.NS){
+                        if ((D2 == Direction.EN || D2 == Direction.NS)&& D1 != D2) {
+                            return getFileAttente().get(1) == this || getFileAttente().get(2) == this;
+                        }
+                        if ((D3 == Direction.EN || D3 == Direction.NS) && D1 != D3) {
+                            return getFileAttente().get(1) == this || getFileAttente().get(3) == this;
                         }
                     }
                     if((D2 == Direction.EO || D3 == Direction.EO
@@ -504,14 +493,16 @@ public class Voiture extends Vehicule {
                      ||
                        (D2 == Direction.EN || D3 == Direction.EN
                      && D2 == Direction.NS || D3 == Direction.NS)) {
-                        if (getFileAttente().get(2) == this || getFileAttente().get(3) == this ) {
-                            return true;
-                        } else {
-                            return false;
-                        }
+                        return getFileAttente().get(2) == this || getFileAttente().get(3) == this;
                     }
                 } else {
                     // Sinon, juste 2 voitures peuvent passer
+                    boolean b = getFileAttente().get(1).getDirection() != Direction.EN
+                            && getFileAttente().get(1).getDirection() != Direction.EO
+                            && getFileAttente().get(1).getDirection() != Direction.ES
+                            && getFileAttente().get(1).getDirection() != Direction.NO
+                            && getFileAttente().get(1).getDirection() != Direction.NS
+                            && getFileAttente().get(1).getDirection() != Direction.OS;
                     switch(getFileAttente().indexOf(this))
                     {
                         // Si je suis deuxième de la file, c'est donc à moi de passer
@@ -519,27 +510,17 @@ public class Voiture extends Vehicule {
                             return true;
                         case 2:
                             //Si je suis troisième de la file, je regarde que le deuxième ne puisse pas passer
-                            return getFileAttente().get(1).getDirection() != Direction.EN
-                                    && getFileAttente().get(1).getDirection() != Direction.EO
-                                    && getFileAttente().get(1).getDirection() != Direction.ES
-                                    && getFileAttente().get(1).getDirection() != Direction.NO
-                                    && getFileAttente().get(1).getDirection() != Direction.NS
-                                    && getFileAttente().get(1).getDirection() != Direction.OS;
+                            return b;
                         case 3:
                             //Si je suis le quatrième de la file, je regarde que le deuxieme
                             //et le troisième ne puissent pas passer
-                            return getFileAttente().get(1).getDirection() != Direction.EN
-                                    && getFileAttente().get(1).getDirection() != Direction.EO
-                                    && getFileAttente().get(1).getDirection() != Direction.ES
-                                    && getFileAttente().get(1).getDirection() != Direction.NO
-                                    && getFileAttente().get(1).getDirection() != Direction.NS
-                                    && getFileAttente().get(1).getDirection() != Direction.OS
-                                    && getFileAttente().get(2).getDirection() != Direction.EN
-                                    && getFileAttente().get(2).getDirection() != Direction.EO
-                                    && getFileAttente().get(2).getDirection() != Direction.ES
-                                    && getFileAttente().get(2).getDirection() != Direction.NO
-                                    && getFileAttente().get(2).getDirection() != Direction.NS
-                                    && getFileAttente().get(2).getDirection() != Direction.OS;
+                            return b
+                                   && getFileAttente().get(2).getDirection() != Direction.EN
+                                   && getFileAttente().get(2).getDirection() != Direction.EO
+                                   && getFileAttente().get(2).getDirection() != Direction.ES
+                                   && getFileAttente().get(2).getDirection() != Direction.NO
+                                   && getFileAttente().get(2).getDirection() != Direction.NS
+                                   && getFileAttente().get(2).getDirection() != Direction.OS;
                     }
                 }
             case SO :
@@ -552,22 +533,20 @@ public class Voiture extends Vehicule {
                             && getDirection() != Direction.SE
                             && getDirection() != Direction.OE
                             && getDirection() != Direction.NO) { return false; }
-                    if((D1 == Direction.NS || D2 == Direction.NS
-                    && D1 == Direction.SE || D2 == Direction.SE)
-                    ||
-                        (D1 == Direction.OE || D2 == Direction.OE
-                      && D1 == Direction.NO || D2 == Direction.NO)) {
-                        return getFileAttente().get(1) == this || getFileAttente().get(2) == this;
+                    if (D1 == Direction.NS || D1 == Direction.SE){
+                        if ((D2 == Direction.NS || D2 == Direction.SE) && D1 != D2) {
+                            return getFileAttente().get(1) == this || getFileAttente().get(2) == this;
+                        }
+                        if ((D3 == Direction.NS || D3 == Direction.SE) && D1 != D3) {
+                            return getFileAttente().get(1) == this || getFileAttente().get(3) == this;
+                        }
                     }
-                    if((D1 == Direction.NS || D3 == Direction.NS
-                    && D1 == Direction.SE|| D3 == Direction.SE)
-                    ||
-                      (D1 == Direction.OE || D3 == Direction.OE
-                    && D1 == Direction.NO || D3 == Direction.NO)) {
-                        if (getFileAttente().get(1) == this || getFileAttente().get(3) == this ) {
-                            return true;
-                        } else {
-                            return false;
+                    if (D1 == Direction.OE || D1 == Direction.NO){
+                        if ((D2 == Direction.OE || D2 == Direction.NO) && D1 != D2) {
+                            return getFileAttente().get(1) == this || getFileAttente().get(2) == this;
+                        }
+                        if ((D3 == Direction.OE || D3 == Direction.NO) && D1 != D3) {
+                            return getFileAttente().get(1) == this || getFileAttente().get(3) == this;
                         }
                     }
                     if((D2 == Direction.NS || D3 == Direction.NS
@@ -575,14 +554,16 @@ public class Voiture extends Vehicule {
                     ||
                     (D2 == Direction.OE || D3 == Direction.OE
                   && D2 == Direction.NO || D3 == Direction.NO)) {
-                        if (getFileAttente().get(2) == this || getFileAttente().get(3) == this ) {
-                            return true;
-                        } else {
-                            return false;
-                        }
+                        return getFileAttente().get(2) == this || getFileAttente().get(3) == this;
                     }
                 } else {
                     // Sinon, juste 2 voitures peuvent passer
+                    boolean b = getFileAttente().get(1).getDirection() != Direction.NO
+                            && getFileAttente().get(1).getDirection() != Direction.NS
+                            && getFileAttente().get(1).getDirection() != Direction.NE
+                            && getFileAttente().get(1).getDirection() != Direction.OS
+                            && getFileAttente().get(1).getDirection() != Direction.OE
+                            && getFileAttente().get(1).getDirection() != Direction.SE;
                     switch(getFileAttente().indexOf(this))
                     {
                         // Si je suis deuxième de la file, c'est donc à moi de passer
@@ -590,21 +571,11 @@ public class Voiture extends Vehicule {
                             return true;
                         case 2:
                             //Si je suis troisième de la file, je regarde que le deuxième ne puisse pas passer
-                            return getFileAttente().get(1).getDirection() != Direction.NO
-                                    && getFileAttente().get(1).getDirection() != Direction.NS
-                                    && getFileAttente().get(1).getDirection() != Direction.NE
-                                    && getFileAttente().get(1).getDirection() != Direction.OS
-                                    && getFileAttente().get(1).getDirection() != Direction.OE
-                                    && getFileAttente().get(1).getDirection() != Direction.SE;
+                            return b;
                         case 3:
                             //Si je suis le quatrième de la file, je regarde que le deuxieme
                             //et le troisième ne puissent pas passer
-                            return getFileAttente().get(1).getDirection() != Direction.NO
-                                    && getFileAttente().get(1).getDirection() != Direction.NS
-                                    && getFileAttente().get(1).getDirection() != Direction.NE
-                                    && getFileAttente().get(1).getDirection() != Direction.OS
-                                    && getFileAttente().get(1).getDirection() != Direction.OE
-                                    && getFileAttente().get(1).getDirection() != Direction.SE
+                            return b
                                     && getFileAttente().get(2).getDirection() != Direction.NO
                                     && getFileAttente().get(2).getDirection() != Direction.NS
                                     && getFileAttente().get(2).getDirection() != Direction.NE
@@ -652,37 +623,37 @@ public class Voiture extends Vehicule {
                             && getDirection() != Direction.NO
                             && getDirection() != Direction.SE
                             && getDirection() != Direction.EO) { return false; }
-                    if((D1 == Direction.SN || D2 == Direction.SN
-                            && D1 == Direction.NO || D2 == Direction.NO)
-                            ||
-                            (D1 == Direction.SE || D2 == Direction.SE
-                                    && D1 == Direction.EO || D2 == Direction.EO)) {
-                        return getFileAttente().get(1) == this || getFileAttente().get(2) == this;
+                    if(D1 == Direction.SN || D1 == Direction.NO) {
+                        if ((D2 == Direction.SN || D2 == Direction.NO) && D1 != D2) {
+                            return getFileAttente().get(1) == this || getFileAttente().get(2) == this;
+                        }
+                        if((D3 == Direction.SN || D3 == Direction.NO) && D1 != D3) {
+                            return getFileAttente().get(1) == this || getFileAttente().get(3) == this;
+                        }
                     }
-                    if((D1 == Direction.SN || D3 == Direction.SN
-                            && D1 == Direction.NO|| D3 == Direction.NO)
-                            ||
-                            (D1 == Direction.SE || D3 == Direction.SE
-                                    && D1 == Direction.EO || D3 == Direction.EO)) {
-                        if (getFileAttente().get(1) == this || getFileAttente().get(3) == this ) {
-                            return true;
-                        } else {
-                            return false;
+                    if(D1 == Direction.SE || D1 == Direction.EO) {
+                        if ((D2 == Direction.SE || D2 == Direction.EO) && D1 != D2) {
+                            return getFileAttente().get(1) == this || getFileAttente().get(2) == this;
+                        }
+                        if((D3 == Direction.SE|| D3 == Direction.EO) && D1 != D3) {
+                            return getFileAttente().get(1) == this || getFileAttente().get(3) == this;
                         }
                     }
                     if((D2 == Direction.SN || D3 == Direction.SN
-                            && D2 == Direction.NO || D3 == Direction.NO)
-                            ||
-                            (D2 == Direction.SE || D3 == Direction.SE
-                                    && D2 == Direction.EO || D3 == Direction.EO)) {
-                        if (getFileAttente().get(2) == this || getFileAttente().get(3) == this ) {
-                            return true;
-                        } else {
-                            return false;
-                        }
+                    && D2 == Direction.NO || D3 == Direction.NO)
+                       ||
+                      (D2 == Direction.SE || D3 == Direction.SE
+                    && D2 == Direction.EO || D3 == Direction.EO)) {
+                        return getFileAttente().get(2) == this || getFileAttente().get(3) == this;
                     }
                 } else {
                     // Sinon, juste 2 voitures peuvent passer
+                    boolean b = getFileAttente().get(1).getDirection() != Direction.SE
+                            && getFileAttente().get(1).getDirection() != Direction.SN
+                            && getFileAttente().get(1).getDirection() != Direction.SO
+                            && getFileAttente().get(1).getDirection() != Direction.EN
+                            && getFileAttente().get(1).getDirection() != Direction.EO
+                            && getFileAttente().get(1).getDirection() != Direction.NO;
                     switch(getFileAttente().indexOf(this))
                     {
                         // Si je suis deuxième de la file, c'est donc à moi de passer
@@ -690,26 +661,16 @@ public class Voiture extends Vehicule {
                             return true;
                         case 2:
                             //Si je suis troisième de la file, je regarde que le deuxième ne puisse pas passer
-                            return getFileAttente().get(1).getDirection() != Direction.SE
-                                    && getFileAttente().get(1).getDirection() != Direction.SN
-                                    && getFileAttente().get(1).getDirection() != Direction.SO
-                                    && getFileAttente().get(1).getDirection() != Direction.EN
-                                    && getFileAttente().get(1).getDirection() != Direction.EO
-                                    && getFileAttente().get(1).getDirection() != Direction.NO;
+                            return b;
                         case 3:
                             //Si je suis le quatrième de la file, je regarde que le deuxieme
                             //et le troisième ne puissent pas passer
-                            return getFileAttente().get(1).getDirection() != Direction.SE
-                                    && getFileAttente().get(1).getDirection() != Direction.SN
-                                    && getFileAttente().get(1).getDirection() != Direction.SO
-                                    && getFileAttente().get(1).getDirection() != Direction.EN
-                                    && getFileAttente().get(1).getDirection() != Direction.EO
-                                    && getFileAttente().get(1).getDirection() != Direction.NO
-                                    && getFileAttente().get(2).getDirection() != Direction.SE
-                                    && getFileAttente().get(2).getDirection() != Direction.SN
-                                    && getFileAttente().get(2).getDirection() != Direction.EN
-                                    && getFileAttente().get(2).getDirection() != Direction.EO
-                                    && getFileAttente().get(2).getDirection() != Direction.NO;
+                            return b
+                                   && getFileAttente().get(2).getDirection() != Direction.SE
+                                   && getFileAttente().get(2).getDirection() != Direction.SN
+                                   && getFileAttente().get(2).getDirection() != Direction.EN
+                                   && getFileAttente().get(2).getDirection() != Direction.EO
+                                   && getFileAttente().get(2).getDirection() != Direction.NO;
                     }
                 }
             case OE :

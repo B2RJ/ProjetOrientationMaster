@@ -19,7 +19,7 @@ public class Main extends Application {
     public final int SIZE_X = 8;
     public final int SIZE_Y = 8;
 
-    private Voiture[] voitures;
+    //private Voiture[] voitures;
     ArrayList<Vehicule> fileAttente = new ArrayList<>();
 
     @Override
@@ -76,7 +76,7 @@ public class Main extends Application {
         StackPane root = new StackPane();
         root.getChildren().add(grid);
         Scene scene = new Scene(root, 800, 800);
-        stage.setTitle("POPOPO POM");
+        stage.setTitle("CARREFOUR INTELLIGENT");
         stage.setScene(scene);
         stage.show();
 
