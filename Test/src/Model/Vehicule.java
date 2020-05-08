@@ -79,6 +79,22 @@ public abstract class Vehicule extends Observable implements Runnable {
 
     public Route getRoute() {return route;}
 
+    public boolean amIwaiting() {
+        return (route.tabCase[getCoordonneX()][getCoordonneY()] instanceof Attente);
+    }
+
+    public boolean canIgo() {
+        for (Voiture v : voitures) {
+            if (v.getCoordonneX() < 8 && v.getCoordonneX() > -1
+            && v.getCoordonneY() < 8 && v.getCoordonneY() > -1) {
+                if (v.getRoute().tabCase[v.getCoordonneX()][v.getCoordonneY()] instanceof Conflit && v != this) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public Vehicule(int sizeX, int sizeY,
                     int coordonneX, int coordonneY,
                     Orientation orientation, Direction direction,

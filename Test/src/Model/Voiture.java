@@ -24,14 +24,17 @@ public class Voiture extends Vehicule {
                 if (maRoute[getCoordonneY()][getCoordonneX()] instanceof Attente) {
                     if(!getFileAttente().isEmpty()) {
                         if (getFileAttente().get(0) == this) {
-                            avancerPrudament();
+                            // Permet de vérifier qu'il y a personne sur le carrefour
+                            if(canIgo()) {
+                                avancerPrudament();
+                            }
                         } else {
                             if ((getFileAttente().indexOf(this) >= 1) && (getFileAttente().indexOf(this) <= 3)){
                                 int cmbvoiture = CombienDeVehiculesPeuventPasser();
                                 if(cmbvoiture == 4) {
                                     avancerPrudament();
                                 } else {
-                                    if (puisJePasser(cmbvoiture)) {
+                                    if (cmbvoiture > 1 && puisJePasser(cmbvoiture)) {
                                         avancerPrudament();
                                     }
                                 }
@@ -175,13 +178,20 @@ public class Voiture extends Vehicule {
         Direction D2 = null;
         Direction D3 = null;
         if(getFileAttente().size() > 1) {
-            D1 = getFileAttente().get(1).getDirection();
+            // On vérifie que la voiture est bien sur une case attente
+            if(getFileAttente().get(1).amIwaiting()) {
+                D1 = getFileAttente().get(1).getDirection();
+            }
         }
         if(getFileAttente().size() > 2) {
-            D2 = getFileAttente().get(2).getDirection();
+            if(getFileAttente().get(2).amIwaiting()) {
+                D2 = getFileAttente().get(2).getDirection();
+            }
         }
         if(getFileAttente().size() > 3) {
-            D3 = getFileAttente().get(3).getDirection();
+            if(getFileAttente().get(3).amIwaiting()) {
+                D3 = getFileAttente().get(3).getDirection();
+            }
         }
 
         final boolean ENSE = (D1 == Direction.EN || D2 == Direction.EN || D3 == Direction.EN)
@@ -317,18 +327,25 @@ public class Voiture extends Vehicule {
     }
 
     public boolean puisJePasser(int cmbVoiture){
+
         Direction D0 = getFileAttente().get(0).getDirection();
         Direction D1 = null;
         Direction D2 = null;
         Direction D3 = null;
         if(getFileAttente().size() > 1) {
-            D1 = getFileAttente().get(1).getDirection();
+            if(getFileAttente().get(1).amIwaiting()) {
+                D1 = getFileAttente().get(1).getDirection();
+            }
         }
         if(getFileAttente().size() > 2) {
-            D2 = getFileAttente().get(2).getDirection();
+            if(getFileAttente().get(2).amIwaiting()) {
+                D2 = getFileAttente().get(2).getDirection();
+            }
         }
         if(getFileAttente().size() > 3) {
-            D3 = getFileAttente().get(3).getDirection();
+            if(getFileAttente().get(3).amIwaiting()) {
+                D3 = getFileAttente().get(3).getDirection();
+            }
         }
 
         switch (D0)
@@ -735,12 +752,15 @@ public class Voiture extends Vehicule {
             this.realiserAction();
             setChanged();
             notifyObservers();
-            int i = (int) (Math.random() * ( 1000 - 1 ));
+            int i = (int) (Math.random() * ( 300 - 1 ));
             try {
                 Thread.sleep(1000 + i);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Vehicule.class.getName()).log(Level.SEVERE, null, ex);
             }
+//            this.realiserAction();
+//            setChanged();
+//            notifyObservers();
         }
         this.deleteObservers();
     }
