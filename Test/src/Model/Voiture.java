@@ -709,7 +709,7 @@ public class Voiture extends Vehicule {
             this.realiserAction();
             setChanged();
             notifyObservers();
-            int i = (int) (Math.random() * ( 300 - 1 ));
+            int i = (int) (Math.random() * ( 401 - 1 ));
             try {
                 Thread.sleep(750 + i);
             } catch (InterruptedException ex) {

@@ -9,10 +9,9 @@ public class mainTest {
     private final int SIZE_X = 10;
     private final int SIZE_Y = 10;
 
-    private Voiture[] voitures;
     ArrayList<Vehicule> fileAttente = new ArrayList<>();
 
-    int nbTests = 5;
+    int nbTests = 6;
     float nbTestDejaFait = 0;
     int nbAssert = 0;
     Route route = new Route();
@@ -318,6 +317,57 @@ public class mainTest {
         System.out.println("Début des tests pour tourner avec une seule voiture");
     }
 
+    private void getDirectionFileAttente() {
+        System.out.println("Début des tests pour obtenir les directions de la file d'attente");
+
+        //Creation des voitures
+        ArrayList<Voiture> v = new ArrayList<>();
+        v.add(new Voiture(SIZE_X, SIZE_Y, 3, 0, Orientation.Sud, Direction.NS, null, fileAttente, route));
+        v.add(new Voiture(SIZE_X, SIZE_Y, 4, 7, Orientation.Nord, Direction.SN, null, fileAttente, route));
+        v.add(new Voiture(SIZE_X, SIZE_Y, 0, 4, Orientation.Est, Direction.OE, null, fileAttente, route));
+        v.add(new Voiture(SIZE_X, SIZE_Y, 7, 3, Orientation.Ouest, Direction.EO, null, fileAttente, route));
+
+        for (Voiture v1 : v) {
+            v1.setVoiture(v);
+        }
+
+        v.get(0).realiserAction();
+        v.get(1).realiserAction();
+        v.get(2).realiserAction();
+        v.get(3).realiserAction();
+
+        //On refait avancer les voitures pour qu'elles soient sur liste d'attente
+        for (Voiture v1 : v) {
+            v1.realiserAction();
+        }
+
+        //Maintenant, on vérifie qu'obtient bien le bon tableau
+        Direction[] comparatif = {
+                v.get(0).getDirection(),
+                v.get(1).getDirection(),
+                v.get(2).getDirection(),
+                v.get(3).getDirection()
+        };
+        v.get(1).setCoordonneX(5);
+        v.get(1).setCoordonneY(4);
+        v.get(1).setCoordonneX(5);
+        v.get(1).setCoordonneY(4);
+        v.get(2).setCoordonneX(4);
+        v.get(2).setCoordonneY(2);
+        v.get(3).setCoordonneX(3);
+        v.get(3).setCoordonneY(5);
+
+        Direction[] eux = v.get(0).getDirectionFileAttente();
+        assert (eux[0] == comparatif[0]) : "Indice 0 : pas ok";
+        assert (eux[1] == comparatif[1]) : "Indice 1 : pas ok";
+        assert (eux[2] == comparatif[2]) : "Indice 2 : pas ok";
+        assert (eux[3] == comparatif[3]) : "Indice 3 : pas ok";
+
+        nbTestDejaFait = nbTestDejaFait + 1;
+        nbAssert = nbAssert + 4;
+        System.out.println("Fin des tests pour obtenir les directions de la file d'attente");
+    }
+
     public void runTest() {
         System.out.println();
         System.out.println("Debut des tests.");
@@ -351,9 +401,14 @@ public class mainTest {
         System.out.println();
         System.out.println("Nous avons réalisé " + (nbTestDejaFait/nbTests)*100 + "% des tests.");
 
+        //Tests file d'attente
+        getDirectionFileAttente();
+        System.out.println();
+        System.out.println("Nous avons réalisé " + (nbTestDejaFait/nbTests)*100 + "% des tests.");
+
         //Bilan
         System.out.println("Le nombres d'asserts réalisé est de: " + nbAssert);
-        System.out.println("Nous avons réalisé " + nbTestDejaFait + " test.");
+        System.out.println("Nous avons réalisé " + nbTestDejaFait + " tests.");
 
         System.out.println();
         System.out.println("Fin des tests.");
