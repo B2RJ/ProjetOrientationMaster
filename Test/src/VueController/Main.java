@@ -19,11 +19,12 @@ public class Main extends Application {
     public final int SIZE_X = 8;
     public final int SIZE_Y = 8;
 
-    private Voiture[] voitures;
+    //private Voiture[] voitures;
     ArrayList<Vehicule> fileAttente = new ArrayList<>();
 
     @Override
     public void start(Stage stage) {
+        System.out.println("Debut");
         GridPane grid = new GridPane();
 
         //Chargement des images
@@ -62,21 +63,10 @@ public class Main extends Application {
         Route route = new Route();
 
         //Déclaration des voiture
-        voitures = new Voiture[] {
-                new Voiture(SIZE_X, SIZE_Y, 3, -1, Orientation.Sud, Direction.NS, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, 3, -3, Orientation.Sud, Direction.NO, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, 3, -7, Orientation.Sud, Direction.NE, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, 4, 8, Orientation.Nord, Direction.SN, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, 4, 14, Orientation.Nord, Direction.SE, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, 4, 12, Orientation.Nord, Direction.SO, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, -1, 4, Orientation.Est, Direction.OE, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, -4, 4, Orientation.Est, Direction.ON, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, -7, 4, Orientation.Est, Direction.OS, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, 8, 3, Orientation.Ouest, Direction.EO, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, 10, 3, Orientation.Ouest, Direction.EN, voitures, fileAttente, route),
-                new Voiture(SIZE_X, SIZE_Y, 12, 3, Orientation.Ouest, Direction.ES, voitures, fileAttente, route),
-
-        };
+        ArrayList<Voiture> voitures = new ArrayList<>();
+        for (int i = 0; i < 25 ; i++) {
+             voitures.add(voitureAleatoire(route));
+        }
 
         for (Voiture v : voitures) {
             v.setVoiture(voitures);
@@ -86,10 +76,9 @@ public class Main extends Application {
         StackPane root = new StackPane();
         root.getChildren().add(grid);
         Scene scene = new Scene(root, 800, 800);
-        stage.setTitle("POPOPO POM");
+        stage.setTitle("CARREFOUR INTELLIGENT");
         stage.setScene(scene);
         stage.show();
-
 
         Observer o = new Observer() {
             @Override
@@ -179,11 +168,13 @@ public class Main extends Application {
                                         }
                                         else { tab[i][j].setImage(imgVoiture_SN); }
                                         break;
-
                                 }
                             }
                         }
                     }
+                }
+                if(voitures.size() <= 0) {
+                    System.out.println("Fin");
                 }
             }
         };
@@ -197,6 +188,89 @@ public class Main extends Application {
 
     //public ArrayList<Vehicule> getFileAttente() { return fileAttente;}
     //public void setFileAttente(ArrayList<Vehicule> newFileAttente) { this.fileAttente = newFileAttente;}
+
+    public Voiture voitureAleatoire(Route route) {
+        // On fixe une Orientation
+        int orientation = (int) (Math.random() * ( 5 - 1 ));
+        int direction, coordX, coordY;
+        Orientation o;
+        Direction d;
+        switch(orientation) {
+            case 1 :
+                o = Orientation.Nord;
+                // On fixe une Direction
+                direction  = (int) (Math.random() * ( 4 - 1 ));
+                coordX = 4;
+                coordY = (int) (Math.random() * ( 55 - 8 ));
+                coordY = 8 + coordY;
+                switch (direction) {
+                    case 1:
+                        d = Direction.SO;
+                        break;
+                    case 2:
+                        d = Direction.SN;
+                        break;
+                    default:
+                        d = Direction.SE;
+                }
+                break;
+            case 2 :
+                o = Orientation.Sud;
+                coordX = 3;
+                coordY = (int) (Math.random() * ( -58 - (-1) ));
+                coordY = coordY - 8;
+                // On fixe une Direction
+                direction  = (int) (Math.random() * ( 4 - 1 ));
+                switch (direction) {
+                    case 1:
+                        d = Direction.NO;
+                        break;
+                    case 2:
+                        d = Direction.NS;
+                        break;
+                    default:
+                        d = Direction.NE;
+                }
+                break;
+            case 3 :
+                o = Orientation.Est;
+                coordX = (int) (Math.random() * ( -58 - (-1) ));
+                coordX = coordX - 8;
+                coordY = 4;
+                // On fixe une Direction
+                direction  = (int) (Math.random() * ( 4 - 1 ));
+                switch (direction) {
+                    case 1:
+                        d = Direction.OS;
+                        break;
+                    case 2:
+                        d = Direction.OE;
+                        break;
+                    default:
+                        d = Direction.ON;
+                }
+                break;
+            default:
+                o = Orientation.Ouest;
+                coordX = (int) (Math.random() * ( 55 - 8 ));
+                coordX = 8 + coordX;
+                coordY = 3;
+                // On fixe une Direction
+                direction  = (int) (Math.random() * ( 4 - 1 ));
+                switch (direction) {
+                    case 1:
+                        d = Direction.EN;
+                        break;
+                    case 2:
+                        d = Direction.ES;
+                        break;
+                    default:
+                        d = Direction.EO;
+                }
+                break;
+        }
+        return new Voiture(SIZE_X, SIZE_Y, coordX, coordY, o, d, null, fileAttente, route);
+    }
 
     public static void startTest() {
         mainTest lesTests = new mainTest();

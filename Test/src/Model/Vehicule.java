@@ -20,7 +20,7 @@ public abstract class Vehicule extends Observable implements Runnable {
     // Ainsi, il y aura plus de réalité au cours de la simulation
     private boolean tuable;
 
-    private Voiture[] voitures;
+    private ArrayList<Voiture> voitures;
     private ArrayList<Vehicule> fileAttente;
 
     private final Route route;
@@ -56,8 +56,8 @@ public abstract class Vehicule extends Observable implements Runnable {
         return direction;
     }
 
-    public Voiture[] getVoitures() { return voitures;}
-    public void setVoiture(Voiture[] newVoiture) { this.voitures = newVoiture; }
+    public ArrayList<Voiture> getVoitures() { return voitures;}
+    public void setVoiture(ArrayList<Voiture> newVoiture) { this.voitures = newVoiture; }
 
     public boolean getTuable() { return tuable;}
     public void setTuable(boolean b) { this.tuable = b;}
@@ -79,10 +79,26 @@ public abstract class Vehicule extends Observable implements Runnable {
 
     public Route getRoute() {return route;}
 
+    public boolean amIwaiting() {
+        return (route.tabCase[getCoordonneX()][getCoordonneY()] instanceof Attente);
+    }
+
+    public boolean canIgo() {
+        for (Voiture v : voitures) {
+            if (v.getCoordonneX() < 8 && v.getCoordonneX() > -1
+            && v.getCoordonneY() < 8 && v.getCoordonneY() > -1) {
+                if (v.getRoute().tabCase[v.getCoordonneX()][v.getCoordonneY()] instanceof Conflit && v != this) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public Vehicule(int sizeX, int sizeY,
                     int coordonneX, int coordonneY,
                     Orientation orientation, Direction direction,
-                    Voiture[] voitures, ArrayList<Vehicule> fileAttente,
+                    ArrayList<Voiture> voitures, ArrayList<Vehicule> fileAttente,
                     Route route) {
         this.dejaTourne = false;
         this.tuable = false;
