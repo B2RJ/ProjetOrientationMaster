@@ -356,7 +356,59 @@ public class Voiture extends Vehicule {
                     {
                         // Si je suis deuxième de la file, c'est donc à moi de passer
                         case 1:
-                            return true;
+                            // Regarder si ma direction est compatible avec le premier
+                            switch(getDirection())
+                            {
+                                case NS:
+                                    return(getFileAttente().get(0).getDirection() == Direction.SN
+                                            || getFileAttente().get(0).getDirection() == Direction.SE
+                                            || getFileAttente().get(0).getDirection() == Direction.EN);
+                                case NE:
+                                    return(getFileAttente().get(0).getDirection() == Direction.EN);
+                                case NO:
+                                    return(getFileAttente().get(0).getDirection() == Direction.OS
+                                    || getFileAttente().get(0).getDirection() == Direction.SE
+                                    || getFileAttente().get(0).getDirection() == Direction.EN
+                                    || getFileAttente().get(0).getDirection() == Direction.OE
+                                    || getFileAttente().get(0).getDirection() == Direction.SN);
+                                case SN:
+                                    return(getFileAttente().get(0).getDirection() == Direction.NO
+                                    || getFileAttente().get(0).getDirection() == Direction.OS);
+                                case SE:
+                                    return(getFileAttente().get(0).getDirection() == Direction.NO
+                                    || getFileAttente().get(0).getDirection() == Direction.OS
+                                    || getFileAttente().get(0).getDirection() == Direction.SE
+                                    || getFileAttente().get(0).getDirection() == Direction.NS
+                                    || getFileAttente().get(0).getDirection() == Direction.EO);
+                                case SO:
+                                    return(getFileAttente().get(0).getDirection() == Direction.OS);
+                                case EN:
+                                    return(getFileAttente().get(0).getDirection() == Direction.NO
+                                    ||getFileAttente().get(0).getDirection() == Direction.OS
+                                    || getFileAttente().get(0).getDirection() == Direction.SE
+                                    || getFileAttente().get(0).getDirection() == Direction.NS
+                                    || getFileAttente().get(0).getDirection() == Direction.OE);
+                                case ES:
+                                    return(getFileAttente().get(0).getDirection() == Direction.SE);
+                                case EO:
+                                    return(getFileAttente().get(0).getDirection() == Direction.OE
+                                    || getFileAttente().get(0).getDirection() == Direction.OS
+                                    || getFileAttente().get(0).getDirection() == Direction.SE);
+                                case ON:
+                                    return(getFileAttente().get(0).getDirection() == Direction.NO);
+                                case OS:
+                                    return(getFileAttente().get(0).getDirection() == Direction.SE
+                                    || getFileAttente().get(0).getDirection() == Direction.EN
+                                    || getFileAttente().get(0).getDirection() == Direction.NO
+                                    || getFileAttente().get(0).getDirection() == Direction.SN
+                                    || getFileAttente().get(0).getDirection() == Direction.EO);
+                                case OE:
+                                    return(getFileAttente().get(0).getDirection() == Direction.EO
+                                    || getFileAttente().get(0).getDirection() == Direction.EN
+                                    || getFileAttente().get(0).getDirection() == Direction.NO);
+                                default:
+                                    return false;
+                            }
                         case 2:
                             //Si je suis troisième de la file, je regarde que le deuxième ne puisse pas passer
                             return getFileAttente().get(1).getDirection() != Direction.SE
