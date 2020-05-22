@@ -62,7 +62,7 @@ public class Main extends Application {
         //Déclaration de la route
         Route route = new Route();
 
-        //Déclaration des voiture
+        //Déclaration des voitures
         ArrayList<Voiture> voitures = new ArrayList<>();
         for (int i = 0; i < 25 ; i++) {
              voitures.add(voitureAleatoire(route));

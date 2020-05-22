@@ -356,7 +356,16 @@ public class Voiture extends Vehicule {
                     {
                         // Si je suis deuxième de la file, c'est donc à moi de passer
                         case 1:
-                            return true;
+                            // Regarder si ma direction est compatible avec le premier
+                            switch(getDirection())
+                            {
+                                case SN:
+                                case SE:
+                                case EN:
+                                    return true;
+                                default:
+                                    return false;
+                            }
                         case 2:
                             //Si je suis troisième de la file, je regarde que le deuxième ne puisse pas passer
                             return getFileAttente().get(1).getDirection() != Direction.SE
@@ -420,7 +429,12 @@ public class Voiture extends Vehicule {
                     {
                         // Si je suis deuxième de la file, c'est donc à moi de passer
                         case 1:
-                            return true;
+                            return (getDirection()==Direction.OS
+                            || getDirection()==Direction.SE
+                            || getDirection()==Direction.EN
+                            || getDirection()==Direction.OE
+                            || getDirection()==Direction.SN
+                            || getDirection()==Direction.ON);
                         case 2:
                             //Si je suis troisième de la file, je regarde que le deuxième ne puisse pas passer
                             return b;
@@ -446,7 +460,15 @@ public class Voiture extends Vehicule {
                     {
                         // Si je suis deuxième de la file, c'est donc à moi de passer
                         case 1:
-                            return true;
+                            switch(getDirection())
+                            {
+                                case NS:
+                                case NO:
+                                case OS:
+                                    return true;
+                                default:
+                                    return false;
+                            }
                         case 2:
                             //Si je suis troisième de la file, je regarde que le deuxième ne puisse pas passer
                             return getFileAttente().get(1).getDirection() != Direction.NS
@@ -507,7 +529,12 @@ public class Voiture extends Vehicule {
                     {
                         // Si je suis deuxième de la file, c'est donc à moi de passer
                         case 1:
-                            return true;
+                            return(getDirection()==Direction.NO
+                            || getDirection()==Direction.OS
+                            || getDirection()==Direction.EN
+                            || getDirection()==Direction.EO
+                            || getDirection()==Direction.NS
+                            || getDirection()==Direction.ES);
                         case 2:
                             //Si je suis troisième de la file, je regarde que le deuxième ne puisse pas passer
                             return b;
@@ -568,7 +595,12 @@ public class Voiture extends Vehicule {
                     {
                         // Si je suis deuxième de la file, c'est donc à moi de passer
                         case 1:
-                            return true;
+                            return(getDirection()==Direction.NO
+                            || getDirection()==Direction.OS
+                            || getDirection()==Direction.SE
+                            || getDirection()==Direction.NS
+                            || getDirection()==Direction.OE
+                            || getDirection()==Direction.NE);
                         case 2:
                             //Si je suis troisième de la file, je regarde que le deuxième ne puisse pas passer
                             return b;
@@ -596,7 +628,9 @@ public class Voiture extends Vehicule {
                     {
                         // Si je suis deuxième de la file, c'est donc à moi de passer
                         case 1:
-                            return true;
+                            return (getDirection()==Direction.OE
+                            || getDirection()==Direction.OS
+                            || getDirection()==Direction.SE);
                         case 2:
                             //Si je suis troisième de la file, je regarde que le deuxième ne puisse pas passer
                             return getFileAttente().get(1).getDirection() != Direction.OS
@@ -658,7 +692,12 @@ public class Voiture extends Vehicule {
                     {
                         // Si je suis deuxième de la file, c'est donc à moi de passer
                         case 1:
-                            return true;
+                            return (getDirection()==Direction.SE
+                            || getDirection()==Direction.EN
+                            || getDirection()==Direction.NO
+                            || getDirection()==Direction.SN
+                            || getDirection()==Direction.EO
+                            || getDirection()==Direction.SO);
                         case 2:
                             //Si je suis troisième de la file, je regarde que le deuxième ne puisse pas passer
                             return b;
@@ -683,7 +722,9 @@ public class Voiture extends Vehicule {
                     {
                         // Si je suis deuxième de la file, c'est donc à moi de passer
                         case 1:
-                            return true;
+                            return (getDirection()==Direction.EO
+                            || getDirection()==Direction.EN
+                            || getDirection()==Direction.NO);
                         case 2:
                             //Si je suis troisième de la file, je regarde que le deuxième ne puisse pas passer
                             return getFileAttente().get(1).getDirection() != Direction.EN
@@ -706,18 +747,18 @@ public class Voiture extends Vehicule {
 
     public void run() {
         while(estEnVie()) {
-            this.realiserAction();
-            setChanged();
-            notifyObservers();
+//            this.realiserAction();
+  //          setChanged();
+    //        notifyObservers();
             int i = (int) (Math.random() * ( 401 - 1 ));
             try {
                 Thread.sleep(750 + i);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Vehicule.class.getName()).log(Level.SEVERE, null, ex);
             }
-//            this.realiserAction();
-//            setChanged();
-//            notifyObservers();
+            this.realiserAction();
+            setChanged();
+            notifyObservers();
         }
         getVoitures().remove(this);
         setChanged();
