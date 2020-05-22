@@ -747,18 +747,18 @@ public class Voiture extends Vehicule {
 
     public void run() {
         while(estEnVie()) {
-            this.realiserAction();
-            setChanged();
-            notifyObservers();
+//            this.realiserAction();
+  //          setChanged();
+    //        notifyObservers();
             int i = (int) (Math.random() * ( 401 - 1 ));
             try {
                 Thread.sleep(750 + i);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Vehicule.class.getName()).log(Level.SEVERE, null, ex);
             }
-//            this.realiserAction();
-//            setChanged();
-//            notifyObservers();
+            this.realiserAction();
+            setChanged();
+            notifyObservers();
         }
         getVoitures().remove(this);
         setChanged();
