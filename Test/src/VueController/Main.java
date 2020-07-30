@@ -14,20 +14,34 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.Observer;
 
+
+/**
+ * This is the main class
+ */
 public class Main extends Application {
 
+    /**
+     * The size of the graphical representation
+     */
     public final int SIZE_X = 8;
     public final int SIZE_Y = 8;
 
     //private Voiture[] voitures;
+    /**
+     * The arrayList of the waitingList
+     */
     ArrayList<Vehicule> fileAttente = new ArrayList<>();
 
+    /**
+     * The function who manage the simulation
+     * @param stage : The javafx Scene
+     */
     @Override
     public void start(Stage stage) {
         System.out.println("Debut");
         GridPane grid = new GridPane();
 
-        //Chargement des images
+        //Load the image
         Image gris = new Image("img/gris.png");
         Image attente = new Image("img/attente.png");
         Image conflit = new Image("img/conflit.png");
@@ -47,10 +61,10 @@ public class Main extends Application {
         Image imgVoiture_SN_D = new Image ("img/Voiture_SN_D.PNG");
         Image imgVoiture_SN_G = new Image ("img/Voiture_SN_G.PNG");
 
-        //Tableau permettant de récuperer les cases graphiques lors du raffraichissement
+        //Array who give the graphical case for the refresh
         ImageView[][] tab = new ImageView[SIZE_X][SIZE_Y];
 
-        //Initialisation de la grille
+        //Grid initialisation
         for (int i = 0 ; i < SIZE_X ; i++) {
             for (int j = 0 ; j < SIZE_Y  ; j++) {
                 ImageView img = new ImageView();
@@ -59,10 +73,10 @@ public class Main extends Application {
             }
         }
 
-        //Déclaration de la route
+        //The road
         Route route = new Route();
 
-        //Déclaration des voitures
+        //The car
         ArrayList<Voiture> voitures = new ArrayList<>();
         for (int i = 0; i < 25 ; i++) {
              voitures.add(voitureAleatoire(route));
@@ -72,18 +86,18 @@ public class Main extends Application {
             v.setVoiture(voitures);
         }
 
-        //Déclaration de la scène + titre
+        //The scene and the Title
         StackPane root = new StackPane();
         root.getChildren().add(grid);
         Scene scene = new Scene(root, 800, 800);
-        stage.setTitle("CARREFOUR INTELLIGENT");
+        stage.setTitle("SMART INTERSECTION");
         stage.setScene(scene);
         stage.show();
 
         Observer o = new Observer() {
             @Override
             public void update(java.util.Observable o, Object arg) {
-                //Raffraichissement graphique
+                //Graphical update
                 for (int i = 0 ; i < SIZE_X ; i++) {
                     for (int j = 0 ; j < SIZE_Y  ; j++) {
                         tab[j][i].setImage(vert);
@@ -97,7 +111,7 @@ public class Main extends Application {
                                     if (route.tabCase[i][j] instanceof Decision) {
                                         tab[j][i].setImage(decision);
                                     } else {
-                                        //Affichage du goudron
+                                        //tar display
                                         tab[j][i].setImage(gris);
                                     }
                                 }
@@ -107,7 +121,7 @@ public class Main extends Application {
                         }
                     }
                 }
-                //Affichage des voitures
+                //vehicle display
                 for (int i = 0 ; i < SIZE_X ; i++) {
                     for (int j = 0; j < SIZE_Y; j++) {
                         for (Voiture voiture : voitures) {
@@ -189,6 +203,11 @@ public class Main extends Application {
     //public ArrayList<Vehicule> getFileAttente() { return fileAttente;}
     //public void setFileAttente(ArrayList<Vehicule> newFileAttente) { this.fileAttente = newFileAttente;}
 
+    /**
+     * To create random car
+     * @param route : The road
+     * @return a random car
+     */
     public Voiture voitureAleatoire(Route route) {
         // On fixe une Orientation
         int orientation = (int) (Math.random() * ( 5 - 1 ));
@@ -272,11 +291,21 @@ public class Main extends Application {
         return new Voiture(SIZE_X, SIZE_Y, coordX, coordY, o, d, null, fileAttente, route);
     }
 
+    /**
+     * To launch the tests
+     */
     public static void startTest() {
         mainTest lesTests = new mainTest();
         lesTests.runTest();
     }
 
+    /**
+     * The main function
+     * @param args to choose the mode
+     * demo : without tests
+     * dev : graphical + tests
+     * test : without graphical
+     */
     public static void main(String[] args) {
         if (args[0].equals("demo")) {
             System.out.println("Mode démo activé");

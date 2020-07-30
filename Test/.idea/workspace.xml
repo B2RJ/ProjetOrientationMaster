@@ -20,9 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Le code plante une fois sur deux. J'arrête pour ce soir">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test/Model/Voiture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test/Model/Voiture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Case.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Case.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Decision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Decision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Direction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Goudron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Goudron.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Route.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Vehicule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Vehicule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Voiture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Voiture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/mainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/mainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VueController/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VueController/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VueController/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VueController/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +103,6 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="16-faire-passer-deux-voitures-en-meme-temps" />
         <entry key="$PROJECT_DIR$/.." value="master" />
       </map>
     </option>
@@ -126,19 +134,19 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pom" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -263,6 +271,7 @@
       <workItem from="1589461228206" duration="582000" />
       <workItem from="1589527837889" duration="1189000" />
       <workItem from="1590043538466" duration="9358000" />
+      <workItem from="1596095459402" duration="4444000" />
     </task>
     <task id="LOCAL-00001" summary="WIP: Création de la classe voiture">
       <created>1586506340528</created>
@@ -563,11 +572,12 @@
     <state x="432" y="224" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog/0.23.1440.814/-212.-1057.1920.1057@0.23.1440.814" timestamp="1588322328486" />
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587999381004" />
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1587999381004" />
-    <state width="1878" height="317" key="GridCell.Tab.0.bottom" timestamp="1590062216226">
-      <screen x="-212" y="-1057" width="1920" height="1057" />
+    <state width="1398" height="124" key="GridCell.Tab.0.bottom" timestamp="1596096520923">
+      <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state width="1878" height="316" key="GridCell.Tab.0.bottom/0.23.1440.806/-212.-1057.1920.1057@-212.-1057.1920.1057" timestamp="1589212970148" />
     <state width="1398" height="267" key="GridCell.Tab.0.bottom/0.23.1440.806/-212.-1057.1920.1057@0.23.1440.806" timestamp="1588750596333" />
+    <state width="1398" height="124" key="GridCell.Tab.0.bottom/0.23.1440.806@0.23.1440.806" timestamp="1596096520923" />
     <state width="1878" height="316" key="GridCell.Tab.0.bottom/0.23.1440.808/-212.-1057.1920.1057@-212.-1057.1920.1057" timestamp="1589212553498" />
     <state width="1398" height="267" key="GridCell.Tab.0.bottom/0.23.1440.808/-212.-1057.1920.1057@0.23.1440.808" timestamp="1588753747448" />
     <state width="1878" height="316" key="GridCell.Tab.0.bottom/0.23.1440.811/-212.-1057.1920.1057@-212.-1057.1920.1057" timestamp="1589212132398" />
@@ -591,11 +601,12 @@
     <state width="1878" height="317" key="GridCell.Tab.0.bottom/0.23.1440.877/-212.-1057.1920.980@-212.-1057.1920.980" timestamp="1590052711297" />
     <state width="1878" height="317" key="GridCell.Tab.0.bottom/0.23.1440.877/-212.-1057.1920.982@-212.-1057.1920.982" timestamp="1590050268791" />
     <state width="903" height="277" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587999381004" />
-    <state width="1878" height="317" key="GridCell.Tab.0.center" timestamp="1590062216224">
-      <screen x="-212" y="-1057" width="1920" height="1057" />
+    <state width="1398" height="124" key="GridCell.Tab.0.center" timestamp="1596096520922">
+      <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state width="1878" height="316" key="GridCell.Tab.0.center/0.23.1440.806/-212.-1057.1920.1057@-212.-1057.1920.1057" timestamp="1589212970146" />
     <state width="1398" height="267" key="GridCell.Tab.0.center/0.23.1440.806/-212.-1057.1920.1057@0.23.1440.806" timestamp="1588750596329" />
+    <state width="1398" height="124" key="GridCell.Tab.0.center/0.23.1440.806@0.23.1440.806" timestamp="1596096520922" />
     <state width="1878" height="316" key="GridCell.Tab.0.center/0.23.1440.808/-212.-1057.1920.1057@-212.-1057.1920.1057" timestamp="1589212553495" />
     <state width="1398" height="267" key="GridCell.Tab.0.center/0.23.1440.808/-212.-1057.1920.1057@0.23.1440.808" timestamp="1588753747446" />
     <state width="1878" height="316" key="GridCell.Tab.0.center/0.23.1440.811/-212.-1057.1920.1057@-212.-1057.1920.1057" timestamp="1589212132396" />
@@ -619,11 +630,12 @@
     <state width="1878" height="317" key="GridCell.Tab.0.center/0.23.1440.877/-212.-1057.1920.980@-212.-1057.1920.980" timestamp="1590052711296" />
     <state width="1878" height="317" key="GridCell.Tab.0.center/0.23.1440.877/-212.-1057.1920.982@-212.-1057.1920.982" timestamp="1590050268789" />
     <state width="903" height="277" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587999381004" />
-    <state width="1878" height="317" key="GridCell.Tab.0.left" timestamp="1590062216223">
-      <screen x="-212" y="-1057" width="1920" height="1057" />
+    <state width="1398" height="124" key="GridCell.Tab.0.left" timestamp="1596096520921">
+      <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state width="1878" height="316" key="GridCell.Tab.0.left/0.23.1440.806/-212.-1057.1920.1057@-212.-1057.1920.1057" timestamp="1589212970146" />
     <state width="1398" height="267" key="GridCell.Tab.0.left/0.23.1440.806/-212.-1057.1920.1057@0.23.1440.806" timestamp="1588750596328" />
+    <state width="1398" height="124" key="GridCell.Tab.0.left/0.23.1440.806@0.23.1440.806" timestamp="1596096520921" />
     <state width="1878" height="316" key="GridCell.Tab.0.left/0.23.1440.808/-212.-1057.1920.1057@-212.-1057.1920.1057" timestamp="1589212553494" />
     <state width="1398" height="267" key="GridCell.Tab.0.left/0.23.1440.808/-212.-1057.1920.1057@0.23.1440.808" timestamp="1588753747445" />
     <state width="1878" height="316" key="GridCell.Tab.0.left/0.23.1440.811/-212.-1057.1920.1057@-212.-1057.1920.1057" timestamp="1589212132393" />
@@ -647,11 +659,12 @@
     <state width="1878" height="317" key="GridCell.Tab.0.left/0.23.1440.877/-212.-1057.1920.980@-212.-1057.1920.980" timestamp="1590052711296" />
     <state width="1878" height="317" key="GridCell.Tab.0.left/0.23.1440.877/-212.-1057.1920.982@-212.-1057.1920.982" timestamp="1590050268788" />
     <state width="903" height="277" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587999381004" />
-    <state width="1878" height="317" key="GridCell.Tab.0.right" timestamp="1590062216226">
-      <screen x="-212" y="-1057" width="1920" height="1057" />
+    <state width="1398" height="124" key="GridCell.Tab.0.right" timestamp="1596096520923">
+      <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state width="1878" height="316" key="GridCell.Tab.0.right/0.23.1440.806/-212.-1057.1920.1057@-212.-1057.1920.1057" timestamp="1589212970147" />
     <state width="1398" height="267" key="GridCell.Tab.0.right/0.23.1440.806/-212.-1057.1920.1057@0.23.1440.806" timestamp="1588750596331" />
+    <state width="1398" height="124" key="GridCell.Tab.0.right/0.23.1440.806@0.23.1440.806" timestamp="1596096520923" />
     <state width="1878" height="316" key="GridCell.Tab.0.right/0.23.1440.808/-212.-1057.1920.1057@-212.-1057.1920.1057" timestamp="1589212553497" />
     <state width="1398" height="267" key="GridCell.Tab.0.right/0.23.1440.808/-212.-1057.1920.1057@0.23.1440.808" timestamp="1588753747447" />
     <state width="1878" height="316" key="GridCell.Tab.0.right/0.23.1440.811/-212.-1057.1920.1057@-212.-1057.1920.1057" timestamp="1589212132397" />
@@ -679,6 +692,11 @@
       <screen x="-212" y="-1057" width="1920" height="1057" />
     </state>
     <state x="172" y="-864" key="MergeDialog/0.23.1440.811/-212.-1057.1920.1057@-212.-1057.1920.1057" timestamp="1588340761275" />
+    <state x="88" y="23" key="SettingsEditor" timestamp="1596097477579">
+      <screen x="0" y="23" width="1440" height="808" />
+    </state>
+    <state x="88" y="23" key="SettingsEditor/0.23.1440.804@0.23.1440.804" timestamp="1596095522534" />
+    <state x="88" y="23" key="SettingsEditor/0.23.1440.808@0.23.1440.808" timestamp="1596097477579" />
     <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1587999381004" />
     <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1587999381004" />
     <state x="508" y="349" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588261422792">
@@ -699,80 +717,5 @@
       <screen x="0" y="23" width="1440" height="814" />
     </state>
     <state x="385" y="161" width="670" height="676" key="search.everywhere.popup/0.23.1440.814/-212.-1057.1920.1057@0.23.1440.814" timestamp="1588247808244" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>11</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Test</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>lib</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
