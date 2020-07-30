@@ -5,7 +5,7 @@ package Model;
  *
  * @author B2RJ
  */
-public class Route {
+public class Road {
 
     /**
      * This is the array who contains the representation of the road
@@ -15,11 +15,11 @@ public class Route {
     /**
      * This is the constructor
      */
-    public Route()
+    public Road()
     {
-        int TAILLE_X = 8;
-        int TAILLE_Y = 8;
-        tabCase = new Case[TAILLE_X][TAILLE_Y];
+        int SIZE_X = 8;
+        int SIZE_Y = 8;
+        tabCase = new Case[SIZE_X][SIZE_Y];
         String intersection = "RRRGGRRR" +
                 "RRRDGRRR" +
                 "RRRAGRRR" +
@@ -29,24 +29,24 @@ public class Route {
                 "RRRGDRRR" +
                 "RRRGGRRR";
 
-        for (int i = 0; i < TAILLE_X; i++)
+        for (int i = 0; i < SIZE_X; i++)
         {
-            for (int j = 0; j < TAILLE_Y; j++)
+            for (int j = 0; j < SIZE_Y; j++)
             {
-                // R = Rien, D = Décision, G = goudron, A = attente, C = Conflit
-                switch (intersection.charAt(TAILLE_X * i +j))
+                // R = Nothing, D = Decision, G = Tar, A = wait, C = conflict
+                switch (intersection.charAt(SIZE_X * i +j))
                 {
                     case 'G':
-                        tabCase[i][j] = new Goudron();
+                        tabCase[i][j] = new Tar();
                         break;
                     case 'D':
                         tabCase[i][j] = new Decision();
                         break;
                     case 'C':
-                        tabCase[i][j] = new Conflit();
+                        tabCase[i][j] = new Conflict();
                         break;
                     case 'A':
-                        tabCase[i][j] = new Attente();
+                        tabCase[i][j] = new Wait();
                         break;
                     default:
                         tabCase[i][j] = new Case();

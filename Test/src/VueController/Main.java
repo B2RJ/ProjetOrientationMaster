@@ -30,7 +30,7 @@ public class Main extends Application {
     /**
      * The arrayList of the waitingList
      */
-    ArrayList<Vehicule> fileAttente = new ArrayList<>();
+    ArrayList<Vehicle> waitingList = new ArrayList<>();
 
     /**
      * The function who manage the simulation
@@ -38,28 +38,28 @@ public class Main extends Application {
      */
     @Override
     public void start(Stage stage) {
-        System.out.println("Debut");
+        System.out.println("Begin");
         GridPane grid = new GridPane();
 
         //Load the image
         Image gris = new Image("img/gris.png");
-        Image attente = new Image("img/attente.png");
-        Image conflit = new Image("img/conflit.png");
+        Image wait = new Image("img/attente.png");
+        Image conflict = new Image("img/conflit.png");
         Image decision = new Image("img/decision.png");
-        Image vert = new Image("img/vert.png");
+        Image green = new Image("img/vert.png");
 
-        Image imgVoiture_EO = new Image ("img/Voiture_EO.PNG");
-        Image imgVoiture_EO_D = new Image ("img/Voiture_EO_D.PNG");
-        Image imgVoiture_EO_G = new Image ("img/Voiture_EO_G.PNG");
-        Image imgVoiture_NS = new Image ("img/Voiture_NS.PNG");
-        Image imgVoiture_NS_D = new Image ("img/Voiture_NS_D.PNG");
-        Image imgVoiture_NS_G= new Image ("img/Voiture_NS_G.PNG");
-        Image imgVoiture_OE = new Image ("img/Voiture_OE.PNG");
-        Image imgVoiture_OE_D = new Image ("img/Voiture_OE_D.PNG");
-        Image imgVoiture_OE_G = new Image ("img/Voiture_OE_G.PNG");
-        Image imgVoiture_SN = new Image ("img/Voiture_SN.PNG");
-        Image imgVoiture_SN_D = new Image ("img/Voiture_SN_D.PNG");
-        Image imgVoiture_SN_G = new Image ("img/Voiture_SN_G.PNG");
+        Image imgCar_EW = new Image ("img/Voiture_EO.PNG");
+        Image imgCar_EW_D = new Image ("img/Voiture_EO_D.PNG");
+        Image imCar_EW_G = new Image ("img/Voiture_EO_G.PNG");
+        Image imgCar_NS = new Image ("img/Voiture_NS.PNG");
+        Image imgCar_NS_D = new Image ("img/Voiture_NS_D.PNG");
+        Image imgCar_NS_G= new Image ("img/Voiture_NS_G.PNG");
+        Image imgCar_WE = new Image ("img/Voiture_OE.PNG");
+        Image imgCar_WE_D = new Image ("img/Voiture_OE_D.PNG");
+        Image imgCar_WE_G = new Image ("img/Voiture_OE_G.PNG");
+        Image imgCar_SN = new Image ("img/Voiture_SN.PNG");
+        Image imgCar_SN_D = new Image ("img/Voiture_SN_D.PNG");
+        Image imgCar_SN_G = new Image ("img/Voiture_SN_G.PNG");
 
         //Array who give the graphical case for the refresh
         ImageView[][] tab = new ImageView[SIZE_X][SIZE_Y];
@@ -74,16 +74,16 @@ public class Main extends Application {
         }
 
         //The road
-        Route route = new Route();
+        Road road = new Road();
 
         //The car
-        ArrayList<Voiture> voitures = new ArrayList<>();
+        ArrayList<Car> cars = new ArrayList<>();
         for (int i = 0; i < 25 ; i++) {
-             voitures.add(voitureAleatoire(route));
+             cars.add(randomCar(road));
         }
 
-        for (Voiture v : voitures) {
-            v.setVoiture(voitures);
+        for (Car v : cars) {
+            v.setCars(cars);
         }
 
         //The scene and the Title
@@ -100,15 +100,15 @@ public class Main extends Application {
                 //Graphical update
                 for (int i = 0 ; i < SIZE_X ; i++) {
                     for (int j = 0 ; j < SIZE_Y  ; j++) {
-                        tab[j][i].setImage(vert);
-                        if (route.tabCase[i][j] instanceof Goudron) {
-                            if(route.tabCase[i][j] instanceof Attente) {
-                                tab[j][i].setImage(attente);
+                        tab[j][i].setImage(green);
+                        if (road.tabCase[i][j] instanceof Tar) {
+                            if(road.tabCase[i][j] instanceof Wait) {
+                                tab[j][i].setImage(wait);
                             } else {
-                                if(route.tabCase[i][j] instanceof Conflit) {
-                                    tab[j][i].setImage(conflit);
+                                if(road.tabCase[i][j] instanceof Conflict) {
+                                    tab[j][i].setImage(conflict);
                                 } else {
-                                    if (route.tabCase[i][j] instanceof Decision) {
+                                    if (road.tabCase[i][j] instanceof Decision) {
                                         tab[j][i].setImage(decision);
                                     } else {
                                         //tar display
@@ -117,114 +117,111 @@ public class Main extends Application {
                                 }
                             }
                         } else {
-                            tab[j][i].setImage(vert);
+                            tab[j][i].setImage(green);
                         }
                     }
                 }
                 //vehicle display
                 for (int i = 0 ; i < SIZE_X ; i++) {
                     for (int j = 0; j < SIZE_Y; j++) {
-                        for (Voiture voiture : voitures) {
-                            if (voiture.getCoordonneX() == i && voiture.getCoordonneY() == j) {
-                                switch (voiture.getOrientation()) {
-                                    case Est:
-                                        if ((voiture.getCoordonneX() == 1
-                                                || voiture.getCoordonneX() == 3)
-                                                && voiture.getCoordonneY() == 4) {
-                                            if (voiture.getDirection() == Direction.OS) {
-                                                tab[i][j].setImage(imgVoiture_OE_D);
-                                            } else if (voiture.getDirection() == Direction.ON) {
-                                                tab[i][j].setImage(imgVoiture_OE_G);
+                        for (Car car : cars) {
+                            if (car.getCoordinateX() == i && car.getCoordinateY() == j) {
+                                switch (car.getOrientation()) {
+                                    case East:
+                                        if ((car.getCoordinateX() == 1
+                                                || car.getCoordinateX() == 3)
+                                                && car.getCoordinateY() == 4) {
+                                            if (car.getDirection() == Direction.WS) {
+                                                tab[i][j].setImage(imgCar_WE_D);
+                                            } else if (car.getDirection() == Direction.WN) {
+                                                tab[i][j].setImage(imgCar_WE_G);
                                             }
-                                            else { tab[i][j].setImage(imgVoiture_OE); }
+                                            else { tab[i][j].setImage(imgCar_WE); }
                                         }
-                                        else { tab[i][j].setImage(imgVoiture_OE); }
+                                        else { tab[i][j].setImage(imgCar_WE); }
                                         break;
 
-                                    case Ouest:
-                                        if ((voiture.getCoordonneX() == 6
-                                                || voiture.getCoordonneX() == 4)
-                                                && voiture.getCoordonneY() == 3) {
-                                            if (voiture.getDirection() == Direction.EN) {
-                                                tab[i][j].setImage(imgVoiture_EO_D);
-                                            } else if (voiture.getDirection() == Direction.ES) {
-                                                tab[i][j].setImage(imgVoiture_EO_G);
+                                    case West:
+                                        if ((car.getCoordinateX() == 6
+                                                || car.getCoordinateX() == 4)
+                                                && car.getCoordinateY() == 3) {
+                                            if (car.getDirection() == Direction.EN) {
+                                                tab[i][j].setImage(imgCar_EW_D);
+                                            } else if (car.getDirection() == Direction.ES) {
+                                                tab[i][j].setImage(imCar_EW_G);
                                             }
-                                            else { tab[i][j].setImage(imgVoiture_EO); }
+                                            else { tab[i][j].setImage(imgCar_EW); }
                                         }
-                                        else { tab[i][j].setImage(imgVoiture_EO); }
+                                        else { tab[i][j].setImage(imgCar_EW); }
                                         break;
 
-                                    case Sud:
-                                        if ((voiture.getCoordonneY() == 1
-                                                || voiture.getCoordonneY() == 3)
-                                                && voiture.getCoordonneX() == 3) {
-                                            if (voiture.getDirection() == Direction.NE) {
-                                                tab[i][j].setImage(imgVoiture_NS_G);
-                                            } else if (voiture.getDirection() == Direction.NO) {
-                                                tab[i][j].setImage(imgVoiture_NS_D);
+                                    case South:
+                                        if ((car.getCoordinateY() == 1
+                                                || car.getCoordinateY() == 3)
+                                                && car.getCoordinateX() == 3) {
+                                            if (car.getDirection() == Direction.NE) {
+                                                tab[i][j].setImage(imgCar_NS_G);
+                                            } else if (car.getDirection() == Direction.NW) {
+                                                tab[i][j].setImage(imgCar_NS_D);
                                             }
-                                            else { tab[i][j].setImage(imgVoiture_NS); }
+                                            else { tab[i][j].setImage(imgCar_NS); }
                                         }
-                                        else { tab[i][j].setImage(imgVoiture_NS); }
+                                        else { tab[i][j].setImage(imgCar_NS); }
                                         break;
 
-                                    case Nord:
-                                        if ((voiture.getCoordonneY() == 6
-                                                || voiture.getCoordonneY() == 4)
-                                                && voiture.getCoordonneX() == 4) {
-                                            if (voiture.getDirection() == Direction.SE) {
-                                                tab[i][j].setImage(imgVoiture_SN_D);
-                                            } else if (voiture.getDirection() == Direction.SO) {
-                                                tab[i][j].setImage(imgVoiture_SN_G);
+                                    case North:
+                                        if ((car.getCoordinateY() == 6
+                                                || car.getCoordinateY() == 4)
+                                                && car.getCoordinateX() == 4) {
+                                            if (car.getDirection() == Direction.SE) {
+                                                tab[i][j].setImage(imgCar_SN_D);
+                                            } else if (car.getDirection() == Direction.SW) {
+                                                tab[i][j].setImage(imgCar_SN_G);
                                             }
-                                            else { tab[i][j].setImage(imgVoiture_SN); }
+                                            else { tab[i][j].setImage(imgCar_SN); }
                                         }
-                                        else { tab[i][j].setImage(imgVoiture_SN); }
+                                        else { tab[i][j].setImage(imgCar_SN); }
                                         break;
                                 }
                             }
                         }
                     }
                 }
-                if(voitures.size() <= 0) {
+                if(cars.size() <= 0) {
                     System.out.println("Fin");
                 }
             }
         };
 
-        for (Voiture voiture : voitures) {
-            voiture.addObserver(o);
-            voiture.start();
+        for (Car car : cars) {
+            car.addObserver(o);
+            car.start();
         }
         grid.requestFocus();
     }
 
-    //public ArrayList<Vehicule> getFileAttente() { return fileAttente;}
-    //public void setFileAttente(ArrayList<Vehicule> newFileAttente) { this.fileAttente = newFileAttente;}
-
     /**
      * To create random car
-     * @param route : The road
+     * @param road : The road
      * @return a random car
      */
-    public Voiture voitureAleatoire(Route route) {
-        // On fixe une Orientation
+    public Car randomCar(Road road) {
+        // We choose an orientation
         int orientation = (int) (Math.random() * ( 5 - 1 ));
         int direction, coordX, coordY;
         Orientation o;
         Direction d;
         switch(orientation) {
             case 1 :
-                o = Orientation.Nord;
-                // On fixe une Direction
+                o = Orientation.North;
+                // We choose a direction
                 direction  = (int) (Math.random() * ( 4 - 1 ));
                 coordX = 4;
                 coordY = (int) (Math.random() * ( 55 - 8 ));
                 coordY = 8 + coordY;
                 switch (direction) {
                     case 1:
-                        d = Direction.SO;
+                        d = Direction.SW;
                         break;
                     case 2:
                         d = Direction.SN;
@@ -234,15 +231,15 @@ public class Main extends Application {
                 }
                 break;
             case 2 :
-                o = Orientation.Sud;
+                o = Orientation.South;
                 coordX = 3;
                 coordY = (int) (Math.random() * ( -58 - (-1) ));
                 coordY = coordY - 8;
-                // On fixe une Direction
+                // We choose a direction
                 direction  = (int) (Math.random() * ( 4 - 1 ));
                 switch (direction) {
                     case 1:
-                        d = Direction.NO;
+                        d = Direction.NW;
                         break;
                     case 2:
                         d = Direction.NS;
@@ -252,29 +249,29 @@ public class Main extends Application {
                 }
                 break;
             case 3 :
-                o = Orientation.Est;
+                o = Orientation.East;
                 coordX = (int) (Math.random() * ( -58 - (-1) ));
                 coordX = coordX - 8;
                 coordY = 4;
-                // On fixe une Direction
+                // We choose a direction
                 direction  = (int) (Math.random() * ( 4 - 1 ));
                 switch (direction) {
                     case 1:
-                        d = Direction.OS;
+                        d = Direction.WS;
                         break;
                     case 2:
-                        d = Direction.OE;
+                        d = Direction.WE;
                         break;
                     default:
-                        d = Direction.ON;
+                        d = Direction.WN;
                 }
                 break;
             default:
-                o = Orientation.Ouest;
+                o = Orientation.West;
                 coordX = (int) (Math.random() * ( 55 - 8 ));
                 coordX = 8 + coordX;
                 coordY = 3;
-                // On fixe une Direction
+                // We choose a direction
                 direction  = (int) (Math.random() * ( 4 - 1 ));
                 switch (direction) {
                     case 1:
@@ -284,11 +281,11 @@ public class Main extends Application {
                         d = Direction.ES;
                         break;
                     default:
-                        d = Direction.EO;
+                        d = Direction.EW;
                 }
                 break;
         }
-        return new Voiture(SIZE_X, SIZE_Y, coordX, coordY, o, d, null, fileAttente, route);
+        return new Car(SIZE_X, SIZE_Y, coordX, coordY, o, d, null, waitingList, road);
     }
 
     /**
@@ -308,16 +305,16 @@ public class Main extends Application {
      */
     public static void main(String[] args) {
         if (args[0].equals("demo")) {
-            System.out.println("Mode démo activé");
+            System.out.println("Demostration mode");
             launch(args);
         }
         if (args[0].equals("dev")) {
-            System.out.println("Mode dev activé");
+            System.out.println("Developpement mode");
             startTest();
             launch(args);
         }
         if (args[0].equals("test")) {
-            System.out.println("Mode test activé");
+            System.out.println("Test mode");
             startTest();
             System.exit(1);
         }

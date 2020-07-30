@@ -1,12 +1,12 @@
 package Model;
 
+/**
+ * Orientation show the side where go the vehicle
+ * @author B2RJ
+ */
 public enum Orientation {
-    /*
-    L'orientation représente de quel côté regarde la voiture.
-    (Si les feux avant sont vers le nord, la voiture est orientée vers le nord)
-     */
-    Nord,
-    Sud,
-    Est,
-    Ouest
+    North,
+    South,
+    East,
+    West
 }
