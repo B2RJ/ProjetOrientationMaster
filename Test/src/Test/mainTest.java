@@ -4,6 +4,12 @@ import Model.*;
 
 import java.util.ArrayList;
 
+/**
+ * Because I didn't use maven, I wrote this test.
+ * This class must disappear if the project goes under maven.
+ *
+ * @author B2RJ
+ */
 public class mainTest {
 
     private final int SIZE_X = 10;
@@ -16,6 +22,9 @@ public class mainTest {
     int nbAssert = 0;
     Route route = new Route();
 
+    /**
+     * This function test the car class
+     */
     private void testVoiture() {
         System.out.println("Début des tests de la classe voiture");
 
@@ -97,6 +106,9 @@ public class mainTest {
         System.out.println("Fin des tests de la classe voiture.");
     }
 
+    /**
+     * This function test how a car forward alone
+     */
     private void avancerUneSeuleVoiture() {
         System.out.println("Début des tests pour avancer une seule voiture");
 
@@ -153,6 +165,9 @@ public class mainTest {
         System.out.println("Fin des tests pour avancer une seule voiture");
     }
 
+    /**
+     * This function test how a car forward carefully alone
+     */
     private void avancerPrudementUneSeuleVoiture() {
         System.out.println("Début des tests pour avancer prudement une seule voiture");
 
@@ -209,6 +224,9 @@ public class mainTest {
         System.out.println("Fin des tests pour avancer prudement à une seule voiture");
     }
 
+    /**
+     * This function test if the car are on position to change its orientation
+     */
     private void doisJeTournerUneSeuleVoiture() {
         System.out.println("Début des tests pour tourner avec une seule voiture");
 
@@ -281,6 +299,9 @@ public class mainTest {
         System.out.println("Début des tests pour tourner avec une seule voiture");
     }
 
+    /**
+     * This function test if the next case is free
+     */
     private void caseSuivanteLibre() {
         System.out.println("Début des tests pour tourner avec une seule voiture");
 
@@ -317,6 +338,9 @@ public class mainTest {
         System.out.println("Début des tests pour tourner avec une seule voiture");
     }
 
+    /**
+     * This function test the getter of the waiting list
+     */
     private void getDirectionFileAttente() {
         System.out.println("Début des tests pour obtenir les directions de la file d'attente");
 
@@ -368,6 +392,9 @@ public class mainTest {
         System.out.println("Fin des tests pour obtenir les directions de la file d'attente");
     }
 
+    /**
+     * This function manage all tests
+     */
     public void runTest() {
         System.out.println();
         System.out.println("Debut des tests.");

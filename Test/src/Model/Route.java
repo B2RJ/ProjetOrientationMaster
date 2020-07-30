@@ -1,9 +1,20 @@
 package Model;
 
+/**
+ * This is the class manage the road.
+ *
+ * @author B2RJ
+ */
 public class Route {
 
+    /**
+     * This is the array who contains the representation of the road
+     */
     public Case[][] tabCase;
 
+    /**
+     * This is the constructor
+     */
     public Route()
     {
         int TAILLE_X = 8;
@@ -45,5 +56,9 @@ public class Route {
         }
     }
 
+    /**
+     * This is the getter of the representation of the road.
+     * @return tabCase
+     */
     public Case[][] getTabCase() {return tabCase;}
 }

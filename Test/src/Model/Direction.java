@@ -1,9 +1,13 @@
 package Model;
 
+/**
+ * This enum is the Direction.
+ * The direction is the indication  of where the vehicle departs and where it arrives.
+ *
+ * @author B2RJ
+ */
+
 public enum Direction {
-    /*
-    La direction représente l'origine de la voiture et sa destination.
-     */
     NS,
     NE,
     NO,

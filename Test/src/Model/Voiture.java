@@ -4,8 +4,27 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * This class is the daughter class of vehicle
+ *
+ * @see Vehicule
+ *
+ * @author B2RJ
+ */
 public class Voiture extends Vehicule {
 
+    /**
+     * The constructor
+     * @param sizeX : The size of the road
+     * @param sizeY : The size of the road
+     * @param coordonneX : The position of the vehicle
+     * @param coordonneY : The position of the vehicle
+     * @param orientation : The orientation of the vehicle
+     * @param direction : The direction of the vehicle
+     * @param voitures : The arrayList with all vehicles
+     * @param fileAttente : The arrayList with the waitingList
+     * @param route: The road
+     */
     public Voiture(int sizeX, int sizeY,
                    int coordonneX, int coordonneY,
                    Orientation orientation, Direction direction,
@@ -14,6 +33,9 @@ public class Voiture extends Vehicule {
         super( sizeX,  sizeY,  coordonneX,  coordonneY,  orientation,  direction, voitures, fileAttente, route);
     }
 
+    /**
+     * This function manage the action do by the vehicle
+     */
     public void realiserAction() {
         Case[][] maRoute = getRoute().getTabCase();
         if (getCoordonneY() > -1 && getCoordonneX() > -1 && getCoordonneX() < 8 && getCoordonneY() < 8) {
@@ -24,7 +46,7 @@ public class Voiture extends Vehicule {
                 if (maRoute[getCoordonneY()][getCoordonneX()] instanceof Attente) {
                     if(!getFileAttente().isEmpty()) {
                         if (getFileAttente().get(0) == this) {
-                            // Permet de vérifier qu'il y a personne sur le carrefour
+                            // To check there is nothing on the intersection
                             if(canIgo()) {
                                 avancerPrudament();
                             }
@@ -44,7 +66,7 @@ public class Voiture extends Vehicule {
                 } else {
                     if (maRoute[getCoordonneY()][getCoordonneX()] instanceof Conflit) {
                         if ( !getDejaTourner() && doisJeTourner()) {
-                            //fonction qui tourne maintenant
+                            //Function to make the rotation
                             Direction d = getDirection();
                             if(d == Direction.EN || d == Direction.ON) {
                                 setOrientation(Orientation.Nord);
@@ -80,6 +102,9 @@ public class Voiture extends Vehicule {
         }
     }
 
+    /**
+     * This function is to forward in all case
+     */
     public void avancer() {
         switch (getOrientation())
         {
@@ -99,12 +124,18 @@ public class Voiture extends Vehicule {
         }
     }
 
+    /**
+     * This function is to forward when there is nothing in the next case
+     */
     public void avancerPrudament() {
         if(CaseSuivanteLibre()) {
             avancer();
         }
     }
 
+    /**
+     * This function is to forward outside the graphical representation
+     */
     public void avancerEnDehorsDeLaMap() {
         avancer();
         if (getCoordonneY() > -1 && getCoordonneX() > -1 && getCoordonneX() < 8 && getCoordonneY() < 8) {
@@ -112,6 +143,10 @@ public class Voiture extends Vehicule {
         }
     }
 
+    /**
+     * This function is to know if I have to change the orientation
+     * @return true if I have to, false otherwise
+     */
     public boolean doisJeTourner() {
         Direction maDirection = getDirection();
         ArrayList<Direction> tourne1 = new ArrayList<>();
@@ -136,6 +171,10 @@ public class Voiture extends Vehicule {
         }
     }
 
+    /**
+     * This function is to know if the next case are free
+     * @return true if it is, false otherwise
+     */
     public boolean CaseSuivanteLibre() {
         switch (getOrientation())
         {
@@ -172,6 +211,14 @@ public class Voiture extends Vehicule {
         return true;
     }
 
+    /**
+     * This function is to get the first four direction in the waiting list
+     * @return an array with the four direction
+     * [0] is the direction of the first vehicle
+     * [1] is the direction of the second vehicle
+     * [2] is the direction of the third vehicle
+     * [3] is the direction of the fouth vehicle
+     */
     public Direction[] getDirectionFileAttente() {
         Direction[] toReturn = new Direction[4];
         toReturn[0] = getFileAttente().get(0).getDirection();
@@ -196,6 +243,10 @@ public class Voiture extends Vehicule {
         return toReturn;
     }
 
+    /**
+     * This function count how many vehicle can pass on the intersection
+     * @return the number of vehicle
+     */
     public int CombienDeVehiculesPeuventPasser() {
 
         Direction[] MyTab = getDirectionFileAttente();
@@ -336,6 +387,11 @@ public class Voiture extends Vehicule {
         return 1;
     }
 
+    /**
+     * This function look if I can pass on the intersection
+     * @param cmbVoiture : The number of vehicule that can pass
+     * @return true if I can, false otherwise
+     */
     public boolean puisJePasser(int cmbVoiture){
 
         Direction[] MyTab = getDirectionFileAttente();
@@ -745,6 +801,9 @@ public class Voiture extends Vehicule {
         return false;
     }
 
+    /**
+     * This function mananage the car
+     */
     public void run() {
         while(estEnVie()) {
 //            this.realiserAction();
@@ -766,6 +825,9 @@ public class Voiture extends Vehicule {
         this.deleteObservers();
     }
 
+    /**
+     * This function is use for the thread
+     */
     public void start() {
         new Thread(this).start();
     }
