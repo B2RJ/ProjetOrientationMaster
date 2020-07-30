@@ -8,11 +8,11 @@ package Model;
  * @author B2RJ
  */
 
-public class Goudron extends Case {
+public class Tar extends Case {
     /**
      * This is the constructor
      */
-    Goudron(){
+    Tar(){
         super();
     }
 }

@@ -8,12 +8,7 @@ package Model;
  * @author B2RJ
  */
 
-public class Decision extends Goudron {
-    /**
-     * This is the value of the case
-     */
-    final String VALEUR = "D";
-
+public class Decision extends Tar {
     /**
      * This is the constructor
      */

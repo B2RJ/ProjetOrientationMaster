@@ -10,17 +10,17 @@ package Model;
 public enum Direction {
     NS,
     NE,
-    NO,
+    NW,
 
     SN,
     SE,
-    SO,
+    SW,
 
-    EO,
+    EW,
     EN,
     ES,
 
-    OE,
-    ON,
-    OS,
+    WE,
+    WN,
+    WS,
 }
