@@ -16,8 +16,8 @@ public abstract class Vehicle extends Observable implements Runnable {
      *
      * @see Road
      */
-    private int coordonneX;
-    private int coordonneY;
+    private int coordinateX;
+    private int coordinateY;
 
     /**
      * This is the size of the road
@@ -47,7 +47,7 @@ public abstract class Vehicle extends Observable implements Runnable {
      * This boolean is use to start vehicule outside the graphical representation.
      * It's use to had more vehicle during the simulation
      */
-    private boolean tuable;
+    private boolean killable;
 
     /**
      * This is the arrayList of all vehicles in the intersection
@@ -57,7 +57,7 @@ public abstract class Vehicle extends Observable implements Runnable {
     /**
      * This is the arrayList of the waiting list
      */
-    private ArrayList<Vehicle> fileAttente;
+    private ArrayList<Vehicle> waitingList;
 
     /**
      * This is the road
@@ -66,10 +66,10 @@ public abstract class Vehicle extends Observable implements Runnable {
 
     /**
      * Setter to change the position in X
-     * @param coordonneX
+     * @param coordinateX
      */
-    public void setCoordonneX(int coordonneX) {
-        this.coordonneX = coordonneX;
+    public void setCoordinateX(int coordinateX) {
+        this.coordinateX = coordinateX;
     }
 
     /**
@@ -77,15 +77,15 @@ public abstract class Vehicle extends Observable implements Runnable {
      * @return coordonneX
      */
     public int getCoordinateX() {
-        return coordonneX;
+        return coordinateX;
     }
 
     /**
      * Setter to change the position in Y
-     * @param coordonneY
+     * @param coordinateY
      */
-    public void setCoordonneY(int coordonneY) {
-        this.coordonneY = coordonneY;
+    public void setCoordinateY(int coordinateY) {
+        this.coordinateY = coordinateY;
     }
 
     /**
@@ -93,7 +93,7 @@ public abstract class Vehicle extends Observable implements Runnable {
      * @return coordonneY
      */
     public int getCoordinateY() {
-        return coordonneY;
+        return coordinateY;
     }
 
     /**
@@ -157,19 +157,19 @@ public abstract class Vehicle extends Observable implements Runnable {
      * Getter to have the boolean killable
      * @return killable
      */
-    public boolean getTuable() { return tuable;}
+    public boolean getKillable() { return killable;}
 
     /**
      * Setter to change the boolean killable
      * @param b
      */
-    public void setTuable(boolean b) { this.tuable = b;}
+    public void setKillable(boolean b) { this.killable = b;}
 
     /**
      * Getter to have the waiting list
      * @return fileAttente
      */
-    public ArrayList<Vehicle> getWaitingList() {return fileAttente;}
+    public ArrayList<Vehicle> getWaitingList() {return waitingList;}
 
     /**
      * This add the vehicle in the waiting list
@@ -177,8 +177,8 @@ public abstract class Vehicle extends Observable implements Runnable {
      */
     public void addWaintingList(Vehicle v) {
         // This is in case we are stop on a decision case
-        if(!fileAttente.contains(v)) {
-            fileAttente.add(v);
+        if(!waitingList.contains(v)) {
+            waitingList.add(v);
         }
     }
 
@@ -187,9 +187,9 @@ public abstract class Vehicle extends Observable implements Runnable {
      * @param v : The vehicule to remove
      */
     public void deleteFileAttente(Vehicle v) {
-        // On utilise le while au cas où il y a deux accès en même temps sur la file
-        while(fileAttente.contains(this)) {
-            fileAttente.remove(v);
+        // We use the while in cas there is two acces on the list
+        while(waitingList.contains(this)) {
+            waitingList.remove(v);
         }
     }
 
@@ -206,17 +206,17 @@ public abstract class Vehicle extends Observable implements Runnable {
         switch (getOrientation())
         {
             case North:
-                setCoordonneY(getCoordinateY()-1);
+                setCoordinateY(getCoordinateY()-1);
                 break;
             case South:
-                setCoordonneY(getCoordinateY()+1);
+                setCoordinateY(getCoordinateY()+1);
                 break;
             case East:
-                setCoordonneX(getCoordinateX()+1);
+                setCoordinateX(getCoordinateX()+1);
                 break;
 
             case West:
-                setCoordonneX(getCoordinateX()-1);
+                setCoordinateX(getCoordinateX()-1);
                 break;
         }
     }
@@ -236,7 +236,7 @@ public abstract class Vehicle extends Observable implements Runnable {
     public void treadOutsideMap() {
         tread();
         if (getCoordinateY() > -1 && getCoordinateX() > -1 && getCoordinateX() < 8 && getCoordinateY() < 8) {
-            this.setTuable(true);
+            this.setKillable(true);
         }
     }
 
@@ -286,12 +286,12 @@ public abstract class Vehicle extends Observable implements Runnable {
      */
     public boolean ShouldTurn() {
         Direction maDirection = getDirection();
-        ArrayList<Direction> tourne1 = new ArrayList<>();
-        tourne1.add(Direction.NW);
-        tourne1.add(Direction.WS);
-        tourne1.add(Direction.EN);
-        tourne1.add(Direction.SE);
-        if (tourne1.contains(maDirection)) {
+        ArrayList<Direction> turn = new ArrayList<>();
+        turn.add(Direction.NW);
+        turn.add(Direction.WS);
+        turn.add(Direction.EN);
+        turn.add(Direction.SE);
+        if (turn.contains(maDirection)) {
             return true;
         }
         switch (maDirection) {
@@ -354,21 +354,21 @@ public abstract class Vehicle extends Observable implements Runnable {
 
         final boolean ENSE = (D1 == Direction.EN || D2 == Direction.EN || D3 == Direction.EN)
                 && (D1 == Direction.SE || D2 == Direction.SE || D3 == Direction.SE);
-        final boolean OSNO = (D1 == Direction.NW || D2 == Direction.NW || D3 == Direction.NW)
+        final boolean WSNW = (D1 == Direction.NW || D2 == Direction.NW || D3 == Direction.NW)
                 && (D1 == Direction.WS || D2 == Direction.WS || D3 == Direction.WS);
-        final boolean SEOS = (D1 == Direction.WS || D2 == Direction.WS || D3 == Direction.WS)
+        final boolean SEWS = (D1 == Direction.WS || D2 == Direction.WS || D3 == Direction.WS)
                 && (D1 == Direction.SE || D2 == Direction.SE || D3 == Direction.SE);
-        final boolean NOEN = (D1 == Direction.EN || D2 == Direction.EN || D3 == Direction.EN)
+        final boolean NWEN = (D1 == Direction.EN || D2 == Direction.EN || D3 == Direction.EN)
                 && (D1 == Direction.NW || D2 == Direction.NW || D3 == Direction.NW);
-        final boolean OSEO = (D1 == Direction.WS || D2 == Direction.WS || D3 == Direction.WS)
+        final boolean WSEW = (D1 == Direction.WS || D2 == Direction.WS || D3 == Direction.WS)
                 && (D1 == Direction.EW || D2 == Direction.EW || D3 == Direction.EW);
         final boolean NSEN = (D1 == Direction.NS || D2 == Direction.NS || D3 == Direction.NS)
                 && (D1 == Direction.EN || D2 == Direction.EN || D3 == Direction.EN);
-        final boolean SNOS = (D1 == Direction.WS || D2 == Direction.WS || D3 == Direction.WS)
+        final boolean SNWS = (D1 == Direction.WS || D2 == Direction.WS || D3 == Direction.WS)
                 && (D1 == Direction.SN || D2 == Direction.SN || D3 == Direction.SN);
         final boolean SENS = (D1 == Direction.SE || D2 == Direction.SE || D3 == Direction.SE)
                 && (D1 == Direction.NS || D2 == Direction.NS || D3 == Direction.NS);
-        final boolean NOSN = (D1 == Direction.SN || D2 == Direction.SN || D3 == Direction.SN)
+        final boolean NWSN = (D1 == Direction.SN || D2 == Direction.SN || D3 == Direction.SN)
                 && (D1 == Direction.NW || D2 == Direction.NW || D3 == Direction.NW);
 
         switch (D0) {
@@ -393,14 +393,14 @@ public abstract class Vehicle extends Observable implements Runnable {
             case NW:
                 if (ENSE && (D1 == Direction.WS || D2 == Direction.WS || D3 == Direction.WS)) {
                     return 4;
-                } else if (ENSE || SEOS || SNOS) {
+                } else if (ENSE || SEWS || SNWS) {
                     return 3;
                 } else
                 {
                     return 2;
                 }
             case SN :
-                if (OSNO) {
+                if (WSNW) {
                     return 3;
                 } else {
                     if ((D1 == Direction.NW || D2 == Direction.NW || D3 == Direction.NW)
@@ -412,9 +412,9 @@ public abstract class Vehicle extends Observable implements Runnable {
                     }
                 }
             case SE :
-                if (NOEN && (D1 == Direction.WS || D2 == Direction.WS || D3 == Direction.WS)) {
+                if (NWEN && (D1 == Direction.WS || D2 == Direction.WS || D3 == Direction.WS)) {
                     return 4;
-                } else if (OSEO || NSEN || NOEN) {
+                } else if (WSEW || NSEN || NWEN) {
                     return 3;
                 } else
                 {
@@ -427,9 +427,9 @@ public abstract class Vehicle extends Observable implements Runnable {
                     return 1;
                 }
             case EN :
-                if (OSNO && (D1 == Direction.SE || D2 == Direction.SE || D3 == Direction.SE)) {
+                if (WSNW && (D1 == Direction.SE || D2 == Direction.SE || D3 == Direction.SE)) {
                     return 4;
-                } else if (OSNO || SEOS || SENS ) {
+                } else if (WSNW || SEWS || SENS ) {
                     return 3;
                 } else
                 {
@@ -442,7 +442,7 @@ public abstract class Vehicle extends Observable implements Runnable {
                     return 1;
                 }
             case EW:
-                if (SEOS) {
+                if (SEWS) {
                     return 3;
                 } else {
                     if ((D1 == Direction.WS || D2 == Direction.WS || D3 == Direction.WS)
@@ -462,14 +462,14 @@ public abstract class Vehicle extends Observable implements Runnable {
             case WS:
                 if (ENSE && (D1 == Direction.NW || D2 == Direction.NW || D3 == Direction.NW)) {
                     return 4;
-                } else if (ENSE || NOEN || NOSN ) {
+                } else if (ENSE || NWEN || NWSN ) {
                     return 3;
                 } else
                 {
                     return 2;
                 }
             case WE:
-                if (NOEN) {
+                if (NWEN) {
                     return 3;
                 } else {
                     if ((D1 == Direction.EN || D2 == Direction.EN || D3 == Direction.EN)
@@ -512,29 +512,29 @@ public abstract class Vehicle extends Observable implements Runnable {
      * The constructor of the vehicle class
      * @param sizeX : The size of the road
      * @param sizeY : The size of the road
-     * @param coordonneX : The position of the vehicle
-     * @param coordonneY : The position of the vehicle
+     * @param coordinateX : The position of the vehicle
+     * @param coordinateY : The position of the vehicle
      * @param orientation : The orientation of the vehicle
      * @param direction : The direction of the vehicle
      * @param cars : The arrayList with all vehicles
-     * @param fileAttente : The arrayList with the waitingList
+     * @param waitingList : The arrayList with the waitingList
      * @param road: The road
      */
     public Vehicle(int sizeX, int sizeY,
-                   int coordonneX, int coordonneY,
+                   int coordinateX, int coordinateY,
                    Orientation orientation, Direction direction,
-                   ArrayList<Car> cars, ArrayList<Vehicle> fileAttente,
+                   ArrayList<Car> cars, ArrayList<Vehicle> waitingList,
                    Road road) {
         this.alreadyTurned = false;
-        this.tuable = false;
+        this.killable = false;
         this.SIZE_X = sizeX;
         this.SIZE_Y = sizeY;
-        this.coordonneX = coordonneX;
-        this.coordonneY = coordonneY;
+        this.coordinateX = coordinateX;
+        this.coordinateY = coordinateY;
         this.orientation = orientation;
         this.direction = direction;
         this.cars = cars;
-        this.fileAttente = fileAttente;
+        this.waitingList = waitingList;
         this.road = road;
     }
 
@@ -548,8 +548,8 @@ public abstract class Vehicle extends Observable implements Runnable {
      * @return
      */
     public boolean isInLife() {
-        if(getTuable()) {
-            return (coordonneX <= SIZE_X && coordonneY <= SIZE_Y && coordonneX >= -1 && coordonneY >= -1);
+        if(getKillable()) {
+            return (coordinateX <= SIZE_X && coordinateY <= SIZE_Y && coordinateX >= -1 && coordinateY >= -1);
         }
         return (true);
     }

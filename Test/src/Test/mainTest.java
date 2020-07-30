@@ -67,10 +67,10 @@ public class mainTest {
         assert (cars.get(3).getDirection() == Direction.EW) : "getDirection() != EO";
 
         //Vérification des SET sur le tableau
-        cars.get(0).setCoordonneX(1);
+        cars.get(0).setCoordinateX(1);
         assert (cars.get(0).getCoordinateX()==1) : "getCoordinateX() != 1";
 
-        cars.get(0).setCoordonneY(5);
+        cars.get(0).setCoordinateY(5);
         assert (cars.get(0).getCoordinateY()==5) : "getCoordinateY() != 5";
 
         cars.get(0).setOrientation(Orientation.East);
@@ -81,23 +81,23 @@ public class mainTest {
 
         //Vérification de la fonction isInLife()
         assert (cars.get(0).isInLife()) : "La voiture0 est pas en vie";
-        cars.get(0).setTuable(true);
-        cars.get(0).setCoordonneY(-2);
+        cars.get(0).setKillable(true);
+        cars.get(0).setCoordinateY(-2);
         assert (!cars.get(0).isInLife()) : "La voiture0 est en vie";
 
         assert (cars.get(1).isInLife()) : "La voiture1 est pas en vie";
-        cars.get(1).setTuable(true);
-        cars.get(1).setCoordonneY(11);
+        cars.get(1).setKillable(true);
+        cars.get(1).setCoordinateY(11);
         assert (!cars.get(1).isInLife()) : "La voiture1 est en vie";
 
         assert (cars.get(2).isInLife()) : "La voiture2 est pas en vie";
-        cars.get(2).setTuable(true);
-        cars.get(2).setCoordonneX(-3);
+        cars.get(2).setKillable(true);
+        cars.get(2).setCoordinateX(-3);
         assert (!cars.get(2).isInLife()) : "La voiture2 est en vie";
 
         assert (cars.get(3).isInLife()) : "La voiture3 est pas en vie";
-        cars.get(3).setTuable(true);
-        cars.get(3).setCoordonneX(11);
+        cars.get(3).setKillable(true);
+        cars.get(3).setCoordinateX(11);
         assert (!cars.get(3).isInLife()) : "La voiture3 est en vie";
 
 
@@ -132,7 +132,7 @@ public class mainTest {
         //Setup
         cars.get(0).setOrientation(Orientation.North);
         cars.get(0).setDirection(Direction.SN);
-        cars.get(0).setCoordonneY(8);
+        cars.get(0).setCoordinateY(8);
         //Test
         cars.get(0).tread();
         assert (cars.get(0).getCoordinateX() == 3) : "La voiture 0 a avancé en X";
@@ -142,8 +142,8 @@ public class mainTest {
         //Setup
         cars.get(0).setOrientation(Orientation.East);
         cars.get(0).setDirection(Direction.WE);
-        cars.get(0).setCoordonneY(4);
-        cars.get(0).setCoordonneX(-1);
+        cars.get(0).setCoordinateY(4);
+        cars.get(0).setCoordinateX(-1);
         //Test
         cars.get(0).tread();
         assert (cars.get(0).getCoordinateX() == 0) : "La voiture 0 n'a pas avancé correctement en X";
@@ -153,8 +153,8 @@ public class mainTest {
         //Setup
         cars.get(0).setOrientation(Orientation.West);
         cars.get(0).setDirection(Direction.EW);
-        cars.get(0).setCoordonneY(3);
-        cars.get(0).setCoordonneX(8);
+        cars.get(0).setCoordinateY(3);
+        cars.get(0).setCoordinateX(8);
         //Test
         cars.get(0).tread();
         assert (cars.get(0).getCoordinateX() == 7) : "La voiture 0 n'a pas avancé correctement en X";
@@ -191,7 +191,7 @@ public class mainTest {
         //Setup
         cars.get(0).setOrientation(Orientation.North);
         cars.get(0).setDirection(Direction.SN);
-        cars.get(0).setCoordonneY(8);
+        cars.get(0).setCoordinateY(8);
         //Test
         cars.get(0).treadCarefully();
         assert (cars.get(0).getCoordinateX() == 3) : "La voiture 0 a avancé en X";
@@ -201,8 +201,8 @@ public class mainTest {
         //Setup
         cars.get(0).setOrientation(Orientation.East);
         cars.get(0).setDirection(Direction.WE);
-        cars.get(0).setCoordonneY(4);
-        cars.get(0).setCoordonneX(-1);
+        cars.get(0).setCoordinateY(4);
+        cars.get(0).setCoordinateX(-1);
         //Test
         cars.get(0).treadCarefully();
         assert (cars.get(0).getCoordinateX() == 0) : "La voiture 0 n'a pas avancé correctement en X";
@@ -212,8 +212,8 @@ public class mainTest {
         //Setup
         cars.get(0).setOrientation(Orientation.West);
         cars.get(0).setDirection(Direction.EW);
-        cars.get(0).setCoordonneY(3);
-        cars.get(0).setCoordonneX(8);
+        cars.get(0).setCoordinateY(3);
+        cars.get(0).setCoordinateX(8);
         //Test
         cars.get(0).treadCarefully();
         assert (cars.get(0).getCoordinateX() == 7) : "La voiture 0 n'a pas avancé correctement en X";
@@ -372,14 +372,14 @@ public class mainTest {
                 v.get(2).getDirection(),
                 v.get(3).getDirection()
         };
-        v.get(1).setCoordonneX(5);
-        v.get(1).setCoordonneY(4);
-        v.get(1).setCoordonneX(5);
-        v.get(1).setCoordonneY(4);
-        v.get(2).setCoordonneX(4);
-        v.get(2).setCoordonneY(2);
-        v.get(3).setCoordonneX(3);
-        v.get(3).setCoordonneY(5);
+        v.get(1).setCoordinateX(5);
+        v.get(1).setCoordinateY(4);
+        v.get(1).setCoordinateX(5);
+        v.get(1).setCoordinateY(4);
+        v.get(2).setCoordinateX(4);
+        v.get(2).setCoordinateY(2);
+        v.get(3).setCoordinateX(3);
+        v.get(3).setCoordinateY(5);
 
         Direction[] eux = v.get(0).getDirectionWaitingList();
         assert (eux[0] == comparatif[0]) : "Indice 0 : pas ok";
