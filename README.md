@@ -1,13 +1,19 @@
 # POM
 
-<h1>Getting started</h1>
-<h2>Pour exécuter le programme avec IntelliJ </h2>
+<p>This project takes place during my studies at Lyon 1 University.<br> 
+I have to implement an intelligent intersection for autonomous cars.<br>
+I choose to use a FIFO to manage the intersection. I had some optimizations, it is possible to have two, three or four vehicles on the intersection if their directions are compatible.<br>
+Other functionalities are to be implemented in the issue.</p>
 
-1.   Ouvrir le dossier Test dans IntelliJ
-2.  Puis File —> Project Structure —>  Librairie —> Le « + » —> Java —> Puis ajouter le dossier présent dans librairies/javafx-sdk-11.0.2/lib —> Apply
-3.  Puis Run —> Edit Configurations —> Le « + » —> 
-        Main class : VueController.main  
-	    Program arguments : demo (pour la démo)  
-        (Pour lancer les tests, VM options : « -ea » et Program arguments: « test »)
-4.  Puis apply
-5.  Puis Run —> Run « demo »
+<h1>Getting started</h1>
+
+<h2>To execute the programm with IntelliJ</h2>
+<p>
+1. Open the Test folder with IntelliJ<br>
+2. File -> Project Structure -> Librairies -> "+" -> Java -> Then add the folder librairies/javafx-sdk-11.0.2/lib —> Apply<br>
+3. Run -> Edit Configuration -> "+"<br>
+Main class : VueController.main <br>
+Program arguments : demo (for test version or demonstration version, write "test" or "dev" AND add "-ea" in the VM options)
+4. Apply <br>
+5. Run -> Run "demo"
+</p>
