@@ -14,7 +14,6 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.Observer;
 
-
 /**
  * This is the main class
  */
