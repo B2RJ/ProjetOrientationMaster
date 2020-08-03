@@ -42,24 +42,24 @@ public class Main extends Application {
         GridPane grid = new GridPane();
 
         //Load the image
-        Image gris = new Image("img/gris.png");
-        Image wait = new Image("img/attente.png");
-        Image conflict = new Image("img/conflit.png");
+        Image gris = new Image("img/grey.png");
+        Image wait = new Image("img/wait.png");
+        Image conflict = new Image("img/conflict.png");
         Image decision = new Image("img/decision.png");
-        Image green = new Image("img/vert.png");
+        Image green = new Image("img/green.png");
 
-        Image imgCar_EW = new Image ("img/Voiture_EO.PNG");
-        Image imgCar_EW_D = new Image ("img/Voiture_EO_D.PNG");
-        Image imCar_EW_G = new Image ("img/Voiture_EO_G.PNG");
-        Image imgCar_NS = new Image ("img/Voiture_NS.PNG");
-        Image imgCar_NS_D = new Image ("img/Voiture_NS_D.PNG");
-        Image imgCar_NS_G= new Image ("img/Voiture_NS_G.PNG");
-        Image imgCar_WE = new Image ("img/Voiture_OE.PNG");
-        Image imgCar_WE_D = new Image ("img/Voiture_OE_D.PNG");
-        Image imgCar_WE_G = new Image ("img/Voiture_OE_G.PNG");
-        Image imgCar_SN = new Image ("img/Voiture_SN.PNG");
-        Image imgCar_SN_D = new Image ("img/Voiture_SN_D.PNG");
-        Image imgCar_SN_G = new Image ("img/Voiture_SN_G.PNG");
+        Image imgCar_EW = new Image ("img/car_EW.PNG");
+        Image imgCar_EW_D = new Image ("img/car_EW_R.PNG");
+        Image imCar_EW_G = new Image ("img/car_EW_L.PNG");
+        Image imgCar_NS = new Image ("img/car_NS.PNG");
+        Image imgCar_NS_D = new Image ("img/car_NS_R.PNG");
+        Image imgCar_NS_G= new Image ("img/car_NS_L.PNG");
+        Image imgCar_WE = new Image ("img/car_WE.PNG");
+        Image imgCar_WE_D = new Image ("img/car_WE_R.PNG");
+        Image imgCar_WE_G = new Image ("img/car_WE_L.PNG");
+        Image imgCar_SN = new Image ("img/car_SN.PNG");
+        Image imgCar_SN_D = new Image ("img/car_SN_R.PNG");
+        Image imgCar_SN_G = new Image ("img/car_SN_L.PNG");
 
         //Array who give the graphical case for the refresh
         ImageView[][] tab = new ImageView[SIZE_X][SIZE_Y];
